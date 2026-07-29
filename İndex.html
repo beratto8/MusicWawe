@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicWave</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="background-animation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<header>
+
+    <div class="logo">
+        🎵 MusicWave
+    </div>
+
+    <div class="search-box">
+
+        <input
+        type="text"
+        id="searchInput"
+        placeholder="Şarkı ara...">
+
+        <button id="searchBtn">
+            Ara
+        </button>
+
+    </div>
+
+    <div class="profile">
+
+        <img
+        src="https://via.placeholder.com/50"
+        alt="profil">
+
+    </div>
+
+</header>
+
+<aside class="sidebar">
+
+    <ul>
+
+        <li class="active">
+            Ana Sayfa
+        </li>
+
+        <li>
+            Trendler
+        </li>
+
+        <li>
+            Favoriler
+        </li>
+
+        <li>
+            Albümler
+        </li>
+
+        <li>
+            Sanatçılar
+        </li>
+
+        <li>
+            Ayarlar
+        </li>
+
+    </ul>
+
+</aside>
+
+<main>
+
+<section class="hero">
+
+<h1>
+
+Müziğin Yeni Dünyasına Hoş Geldin
+
+</h1>
+
+<p>
+
+Favori şarkılarını ara,
+çal,
+keşfet.
+
+</p>
+
+</section>
+
+<section class="songs">
+
+<h2>
+
+Trend Şarkılar
+
+</h2>
+
+<div class="song-grid">
+
+<div class="song-card">
+
+<img
+src="https://picsum.photos/300/300?1">
+
+<h3>Believer</h3>
+
+<p>Imagine Dragons</p>
+
+<button class="play-btn">
+
+▶ Dinle
+
+</button>
+
+</div>
+
+<div class="song-card">
+
+<img
+src="https://picsum.photos/300/300?2">
+
+<h3>Shape Of You</h3>
+
+<p>Ed Sheeran</p>
+
+<button class="play-btn">
+
+▶ Dinle
+
+</button>
+
+</div>
+
+<div class="song-card">
+
+<img
+src="https://picsum.photos/300/300?3">
+
+<h3>Blinding Lights</h3>
+
+<p>The Weeknd</p>
+
+<button class="play-btn">
+
+▶ Dinle
+
+</button>
+
+</div>
+
+<div class="song-card">
+
+<img
+src="https://picsum.photos/300/300?4">
+
+<h3>Lovely</h3>
+
+<p>Billie Eilish</p>
+
+<button class="play-btn">
+
+▶ Dinle
+
+</button>
+
+</div>
+
+<div class="song-card">
+
+<img
+src="https://picsum.photos/300/300?5">
+
+<h3>Faded</h3>
+
+<p>Alan Walker</p>
+
+<button class="play-btn">
+
+▶ Dinle
+
+</button>
+
+</div>
+
+<div class="song-card">
+
+<img
+src="https://picsum.photos/300/300?6">
+
+<h3>Animals</h3>
+
+<p>Maroon 5</p>
+
+<button class="play-btn">
+
+▶ Dinle
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="playlist">
+
+<h2>
+
+Çalma Listesi
+
+</h2>
+
+<div class="playlist-list">
+
+<div class="playlist-item">
+
+<span>01</span>
+
+<p>Believer</p>
+
+<button>▶</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>02</span>
+
+<p>Faded</p>
+
+<button>▶</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>03</span>
+
+<p>Lovely</p>
+
+<button>▶</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>04</span>
+
+<p>Animals</p>
+
+<button>▶</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>05</span>
+
+<p>Shape Of You</p>
+
+<button>▶</button>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="player">
+
+<div class="left-player">
+
+<img
+src="https://picsum.photos/100/100?7">
+
+<div>
+
+<h3 id="musicName">
+
+Şarkı Seçilmedi
+
+</h3>
+
+<p id="artistName">
+
+Sanatçı
+
+</p>
+
+</div>
+
+</div>
+
+<div class="center-player">
+
+<button id="prev">
+
+⏮
+
+</button>
+
+<button id="play">
+
+▶
+
+</button>
+
+<button id="pause">
+
+⏸
+
+</button>
+
+<button id="next">
+
+⏭
+
+</button>
+
+</div>
+
+<div class="right-player">
+
+<input
+type="range"
+id="progress"
+value="0">
+
+<input
+type="range"
+id="volume"
+value="100">
+
+</div>
+
+<audio id="audioPlayer"></audio>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+  </html>
