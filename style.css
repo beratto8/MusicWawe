@@ -1,5 +1,5 @@
 /* =========================
-   MUSICWAVE V4 CSS
+   MUSICWAVE CSS V1
    PART 1
 ========================= */
 
@@ -7,20 +7,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 
+
 *{
 
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
+
 font-family:'Poppins',sans-serif;
-
-}
-
-
-
-html{
-
-scroll-behavior:smooth;
 
 }
 
@@ -38,9 +34,18 @@ overflow-x:hidden;
 
 
 
+html{
+
+scroll-behavior:smooth;
+
+}
 
 
-/* SCROLL */
+
+
+
+
+/* SCROLLBAR */
 
 
 ::-webkit-scrollbar{
@@ -48,6 +53,7 @@ overflow-x:hidden;
 width:8px;
 
 }
+
 
 
 ::-webkit-scrollbar-thumb{
@@ -72,6 +78,7 @@ background:#111;
 
 
 
+
 /* BACKGROUND */
 
 
@@ -79,25 +86,25 @@ background:#111;
 
 position:fixed;
 
-top:0;
-
-left:0;
-
 width:100%;
 
 height:100%;
 
-z-index:-1;
+top:0;
 
-overflow:hidden;
+left:0;
+
+z-index:-1;
 
 background:
 
 linear-gradient(
 135deg,
 #020202,
-#101010
+#111
 );
+
+overflow:hidden;
 
 }
 
@@ -117,11 +124,11 @@ border-radius:50%;
 
 box-shadow:
 
-0 0 25px #1ed760;
+0 0 30px #1ed760;
 
 animation:
 
-float 18s infinite linear;
+float 20s linear infinite;
 
 }
 
@@ -131,8 +138,6 @@ float 18s infinite linear;
 
 left:10%;
 
-animation-delay:0s;
-
 }
 
 
@@ -141,7 +146,7 @@ animation-delay:0s;
 
 left:30%;
 
-animation-delay:4s;
+animation-delay:5s;
 
 }
 
@@ -151,7 +156,7 @@ animation-delay:4s;
 
 left:50%;
 
-animation-delay:8s;
+animation-delay:10s;
 
 }
 
@@ -161,7 +166,7 @@ animation-delay:8s;
 
 left:70%;
 
-animation-delay:12s;
+animation-delay:15s;
 
 }
 
@@ -171,10 +176,9 @@ animation-delay:12s;
 
 left:90%;
 
-animation-delay:16s;
+animation-delay:18s;
 
 }
-
 
 
 
@@ -197,7 +201,6 @@ transform:translateY(-120vh);
 
 
 }
-
 
 
 
@@ -227,17 +230,13 @@ justify-content:space-between;
 
 padding:0 40px;
 
-background:
-
-rgba(10,10,10,.85);
+background:#090909dd;
 
 backdrop-filter:blur(20px);
 
 z-index:1000;
 
-border-bottom:
-
-1px solid #222;
+border-bottom:1px solid #222;
 
 }
 
@@ -265,6 +264,7 @@ text-shadow:
 
 
 
+
 .search-box{
 
 display:flex;
@@ -277,7 +277,7 @@ gap:10px;
 
 .search-box input{
 
-width:380px;
+width:400px;
 
 height:45px;
 
@@ -287,16 +287,15 @@ outline:none;
 
 border-radius:30px;
 
+padding:0 20px;
+
 background:#181818;
 
 color:white;
 
-padding:0 20px;
-
-font-size:16px;
+font-size:15px;
 
 }
-
 
 
 
@@ -314,24 +313,7 @@ background:#1ed760;
 
 cursor:pointer;
 
-}
-
-
-
-
-
-
-.profile img{
-
-width:55px;
-
-height:55px;
-
-border-radius:50%;
-
-border:3px solid #1ed760;
-
-cursor:pointer;
+font-size:18px;
 
 }
 
@@ -356,9 +338,7 @@ background:#0d0d0d;
 
 padding:30px 20px;
 
-border-right:
-
-1px solid #222;
+border-right:1px solid #222;
 
 }
 
@@ -382,7 +362,7 @@ gap:15px;
 
 padding:15px;
 
-margin-bottom:10px;
+margin-bottom:12px;
 
 border-radius:15px;
 
@@ -399,7 +379,7 @@ transition:.3s;
 
 background:#1ed760;
 
-color:#000;
+color:black;
 
 transform:translateX(8px);
 
@@ -412,7 +392,7 @@ transform:translateX(8px);
 
 
 /* =========================
-MAIN
+ MAIN
 ========================= */
 
 
@@ -425,7 +405,6 @@ padding:
 110px 40px 150px;
 
 }
-
 
 
 
@@ -453,47 +432,11 @@ background:
 linear-gradient(
 135deg,
 #1ed760,
-#00aa55,
+#095c28,
 #111
 );
 
-background-size:200%;
-
-animation:
-
-heroMove 8s infinite;
-
 }
-
-
-
-@keyframes heroMove{
-
-
-0%{
-
-background-position:0%;
-
-}
-
-
-50%{
-
-background-position:100%;
-
-}
-
-
-100%{
-
-background-position:0%;
-
-}
-
-
-}
-
-
 
 
 
@@ -541,8 +484,6 @@ margin-bottom:25px;
 
 
 
-
-
 /* SONG GRID */
 
 
@@ -577,9 +518,7 @@ padding:18px;
 
 border-radius:25px;
 
-border:
-
-1px solid #222;
+border:1px solid #222;
 
 transition:.3s;
 
@@ -618,7 +557,7 @@ border-radius:20px;
 
 margin-top:15px;
 
-font-size:21px;
+font-size:20px;
 
 }
 
@@ -628,9 +567,10 @@ font-size:21px;
 
 color:#aaa;
 
-margin:8px 0;
+margin:8px 0 15px;
 
 }
+
 
 
 
@@ -656,6 +596,8 @@ cursor:pointer;
 
 
 
+
+
 .play-btn:hover{
 
 transform:scale(1.05);
@@ -668,29 +610,75 @@ transform:scale(1.05);
 
 
 
-/* SEARCH RESULT */
+
+/* =========================
+ STATS
+========================= */
 
 
-#searchResults{
 
-display:none;
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:25px;
 
 }
 
 
 
-.no-results{
+.stat-card{
 
-margin-top:30px;
+background:#111;
 
-font-size:20px;
+border-radius:25px;
+
+padding:25px;
+
+border:1px solid #222;
+
+text-align:center;
+
+}
+
+
+
+.stat-card h3{
+
+color:#aaa;
+
+font-size:16px;
+
+}
+
+
+
+.stat-card strong{
+
+display:block;
+
+font-size:35px;
+
+color:#1ed760;
+
+margin:15px 0;
+
+}
+
+
+
+.stat-card p{
 
 color:#aaa;
 
 }
 
 /* =========================
-   TOP 10
+   RECENT + TOP 10
 ========================= */
 
 
@@ -721,6 +709,8 @@ background:#111;
 padding:18px 25px;
 
 border-radius:18px;
+
+border:1px solid #222;
 
 transition:.3s;
 
@@ -781,7 +771,36 @@ cursor:pointer;
 
 
 /* =========================
- MUSIC PLAYER
+ SEARCH
+========================= */
+
+
+.search-results{
+
+display:none;
+
+}
+
+
+
+.no-results{
+
+color:#aaa;
+
+font-size:20px;
+
+margin-top:20px;
+
+}
+
+
+
+
+
+
+
+/* =========================
+ PLAYER
 ========================= */
 
 
@@ -797,9 +816,7 @@ width:100%;
 
 height:100px;
 
-background:
-
-rgba(10,10,10,.95);
+background:#090909ee;
 
 backdrop-filter:blur(20px);
 
@@ -811,21 +828,20 @@ justify-content:space-between;
 
 padding:0 35px;
 
+border-top:1px solid #222;
+
 z-index:3000;
 
-border-top:
-
-1px solid #222;
+transition:.4s;
 
 }
-
 
 
 
 
 .player.closed{
 
-transform:translateY(70px);
+transform:translateY(100%);
 
 }
 
@@ -833,13 +849,41 @@ transform:translateY(70px);
 
 
 
+#closePlayer{
+
+position:absolute;
+
+top:-35px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:45px;
+
+height:30px;
+
+border:none;
+
+border-radius:20px 20px 0 0;
+
+background:#1ed760;
+
+cursor:pointer;
+
+}
+
+
+
 #openPlayer{
+
+display:none;
 
 position:fixed;
 
-right:25px;
-
 bottom:20px;
+
+right:25px;
 
 width:50px;
 
@@ -851,13 +895,22 @@ border-radius:50%;
 
 background:#1ed760;
 
-display:none;
-
 cursor:pointer;
 
 z-index:4000;
 
+font-size:20px;
+
 }
+
+
+
+#openPlayer.show{
+
+display:block;
+
+}
+
 
 
 
@@ -903,7 +956,6 @@ font-size:18px;
 color:#aaa;
 
 }
-
 
 
 
@@ -968,13 +1020,14 @@ box-shadow:
 
 
 
+
 .player-right{
 
 display:flex;
 
 align-items:center;
 
-gap:15px;
+gap:10px;
 
 }
 
@@ -988,79 +1041,8 @@ accent-color:#1ed760;
 
 }
 
-
-
-
-
-
 /* =========================
- LYRICS PANEL
-========================= */
-
-
-.lyrics-panel{
-
-position:fixed;
-
-right:-420px;
-
-top:0;
-
-width:400px;
-
-height:100%;
-
-background:#111;
-
-padding:30px;
-
-z-index:3500;
-
-transition:.5s;
-
-}
-
-
-
-.lyrics-panel.active{
-
-right:0;
-
-}
-
-
-
-
-.lyrics-header{
-
-display:flex;
-
-justify-content:space-between;
-
-}
-
-
-
-.lyrics-header button{
-
-width:35px;
-
-height:35px;
-
-border:none;
-
-border-radius:50%;
-
-background:#222;
-
-color:white;
-
-cursor:pointer;
-
-}
-
-/* =========================
- SETTINGS
+ SETTINGS PANEL
 ========================= */
 
 
@@ -1084,6 +1066,8 @@ z-index:3500;
 
 transition:.4s;
 
+border:1px solid #222;
+
 }
 
 
@@ -1102,6 +1086,8 @@ right:30px;
 display:flex;
 
 justify-content:space-between;
+
+align-items:center;
 
 margin-bottom:25px;
 
@@ -1123,7 +1109,11 @@ background:#222;
 
 color:white;
 
+cursor:pointer;
+
 }
+
+
 
 
 
@@ -1147,18 +1137,20 @@ margin-bottom:15px;
 
 
 
-.setting-item button,
-.setting-item select{
+.setting-item button{
 
 background:#1ed760;
 
 border:none;
 
-padding:8px 15px;
+padding:8px 18px;
 
 border-radius:20px;
 
+cursor:pointer;
+
 }
+
 
 
 
@@ -1197,6 +1189,8 @@ background:#555;
 
 border-radius:30px;
 
+cursor:pointer;
+
 }
 
 
@@ -1215,9 +1209,9 @@ background:white;
 
 border-radius:50%;
 
-left:3px;
-
 top:2px;
+
+left:3px;
 
 transition:.3s;
 
@@ -1235,7 +1229,7 @@ background:#1ed760;
 
 .switch input:checked + .slider:before{
 
-transform:translateX(25px);
+transform:translateX(24px);
 
 }
 
@@ -1244,99 +1238,8 @@ transform:translateX(25px);
 
 
 
-/* =========================
- PROFILE
-========================= */
 
-
-.profile-panel{
-
-position:fixed;
-
-right:-350px;
-
-top:90px;
-
-width:320px;
-
-background:#111;
-
-padding:25px;
-
-border-radius:25px;
-
-z-index:3500;
-
-transition:.4s;
-
-}
-
-
-
-.profile-panel.active{
-
-right:30px;
-
-}
-
-
-
-.profile-header{
-
-display:flex;
-
-justify-content:space-between;
-
-}
-
-
-
-.profile-content{
-
-text-align:center;
-
-}
-
-
-
-.profile-content img{
-
-width:100px;
-
-height:100px;
-
-border-radius:50%;
-
-border:3px solid #1ed760;
-
-}
-
-
-
-.profile-content button{
-
-width:100%;
-
-padding:12px;
-
-margin-top:15px;
-
-border:none;
-
-border-radius:30px;
-
-background:#1ed760;
-
-}
-
-
-
-
-
-
-/* =========================
- LIGHT MODE
-========================= */
+/* LIGHT MODE */
 
 
 body.light{
@@ -1350,11 +1253,11 @@ color:#111;
 
 
 body.light .song-card,
+body.light .stat-card,
 body.light .playlist-item,
-body.light .player,
 body.light .sidebar,
-body.light .settings-panel,
-body.light .profile-panel{
+body.light .player,
+body.light .settings-panel{
 
 background:white;
 
@@ -1364,9 +1267,7 @@ color:#111;
 
 
 
-body.light input{
-
-background:#ddd;
+body.light .playlist-item p{
 
 color:#111;
 
@@ -1374,11 +1275,19 @@ color:#111;
 
 
 
+body.light .sidebar{
+
+border-color:#ddd;
+
+}
 
 
-/* =========================
- MOBILE NAV
-========================= */
+
+
+
+
+
+/* MOBILE NAV */
 
 
 .mobile-nav{
@@ -1391,12 +1300,14 @@ display:none;
 
 
 
-/* =========================
- MOBILE
-========================= */
+
+
+
+/* RESPONSIVE */
 
 
 @media(max-width:1000px){
+
 
 
 .sidebar{
@@ -1411,7 +1322,9 @@ main{
 
 margin-left:0;
 
-padding:100px 20px 150px;
+padding:
+
+100px 20px 150px;
 
 }
 
@@ -1419,7 +1332,7 @@ padding:100px 20px 150px;
 
 .hero h1{
 
-font-size:35px;
+font-size:36px;
 
 }
 
@@ -1447,7 +1360,18 @@ padding:15px;
 
 
 
+.stats-grid{
+
+grid-template-columns:1fr;
+
 }
+
+
+
+}
+
+
+
 
 
 
@@ -1458,9 +1382,9 @@ padding:15px;
 
 header{
 
-height:auto;
-
 padding:15px;
+
+height:auto;
 
 flex-wrap:wrap;
 
@@ -1470,7 +1394,7 @@ flex-wrap:wrap;
 
 .logo{
 
-font-size:22px;
+font-size:23px;
 
 }
 
@@ -1502,7 +1426,7 @@ grid-template-columns:1fr;
 
 .hero{
 
-height:260px;
+height:250px;
 
 padding:25px;
 
@@ -1515,7 +1439,6 @@ padding:25px;
 font-size:30px;
 
 }
-
 
 
 
@@ -1567,6 +1490,8 @@ flex-direction:column;
 
 gap:5px;
 
+font-size:12px;
+
 }
 
 
@@ -1577,23 +1502,6 @@ font-size:20px;
 
 }
 
-
-
-.settings-panel{
-
-width:90%;
-
-right:-100%;
-
-}
-
-
-
-.settings-panel.show{
-
-right:5%;
-
-}
 
 
 }
