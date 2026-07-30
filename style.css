@@ -1,27 +1,43 @@
+/* =========================
+   MUSICWAVE V3 STYLE
+   PART 1
+========================= */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+
 }
+
 
 
 html{
+
 scroll-behavior:smooth;
+
 }
+
 
 
 body{
 
 background:#050505;
+
 color:white;
+
 overflow-x:hidden;
+
 transition:.4s;
 
 }
+
 
 
 
@@ -36,10 +52,12 @@ width:8px;
 
 ::-webkit-scrollbar-thumb{
 
-background:#00ff88;
+background:#1ed760;
+
 border-radius:20px;
 
 }
+
 
 
 ::-webkit-scrollbar-track{
@@ -52,26 +70,24 @@ background:#111;
 
 
 
-
-/* ======================
-BACKGROUND ANIMATION
-====================== */
+/* =========================
+BACKGROUND
+========================= */
 
 
 .background-animation{
 
 position:fixed;
+
 inset:0;
-z-index:-5;
+
+z-index:-2;
+
 overflow:hidden;
 
 background:
 
-radial-gradient(
-circle at top,
-#003b27,
-#050505 45%
-);
+radial-gradient(circle at top,#143d22,#050505 50%);
 
 }
 
@@ -79,29 +95,23 @@ circle at top,
 
 .background-animation span{
 
-
 position:absolute;
 
-width:200px;
-height:200px;
+width:120px;
+
+height:120px;
 
 background:
 
-radial-gradient(
-circle,
-rgba(0,255,136,.25),
-transparent 70%
-);
-
-
-filter:blur(20px);
+rgba(30,215,96,.15);
 
 border-radius:50%;
 
+filter:blur(5px);
 
 animation:
-moveLight 20s linear infinite;
 
+move 18s infinite linear;
 
 }
 
@@ -109,7 +119,8 @@ moveLight 20s linear infinite;
 
 .background-animation span:nth-child(1){
 
-left:5%;
+left:10%;
+
 animation-delay:0s;
 
 }
@@ -118,8 +129,9 @@ animation-delay:0s;
 
 .background-animation span:nth-child(2){
 
-left:25%;
-animation-delay:5s;
+left:30%;
+
+animation-delay:3s;
 
 }
 
@@ -128,7 +140,8 @@ animation-delay:5s;
 .background-animation span:nth-child(3){
 
 left:50%;
-animation-delay:10s;
+
+animation-delay:6s;
 
 }
 
@@ -137,7 +150,8 @@ animation-delay:10s;
 .background-animation span:nth-child(4){
 
 left:70%;
-animation-delay:15s;
+
+animation-delay:9s;
 
 }
 
@@ -146,42 +160,36 @@ animation-delay:15s;
 .background-animation span:nth-child(5){
 
 left:90%;
-animation-delay:7s;
+
+animation-delay:12s;
 
 }
 
 
 
 
-
-@keyframes moveLight{
+@keyframes move{
 
 
 0%{
 
-transform:
-translateY(120vh)
-scale(.5);
+transform:translateY(100vh) scale(.5);
 
 opacity:0;
 
 }
 
 
-
-30%{
+50%{
 
 opacity:1;
 
 }
 
 
-
 100%{
 
-transform:
-translateY(-120vh)
-scale(1.5);
+transform:translateY(-120vh) scale(1.5);
 
 opacity:0;
 
@@ -195,23 +203,22 @@ opacity:0;
 
 
 
-/* ======================
+/* =========================
 HEADER
-====================== */
+========================= */
 
 
 header{
 
-
 position:fixed;
 
 top:0;
+
 left:0;
 
 width:100%;
 
 height:80px;
-
 
 display:flex;
 
@@ -219,28 +226,21 @@ align-items:center;
 
 justify-content:space-between;
 
-
-padding:0 40px;
-
+padding:0 35px;
 
 background:
 
-rgba(5,5,5,.75);
-
+rgba(0,0,0,.75);
 
 backdrop-filter:blur(20px);
 
+z-index:1000;
 
 border-bottom:
 
-1px solid rgba(0,255,136,.15);
-
-
-z-index:1000;
-
+1px solid rgba(255,255,255,.08);
 
 }
-
 
 
 
@@ -248,29 +248,22 @@ z-index:1000;
 
 .logo{
 
-
 font-size:30px;
 
 font-weight:800;
 
-letter-spacing:1px;
-
-
-color:#00ff88;
-
+color:#1ed760;
 
 cursor:pointer;
 
-
 text-shadow:
 
-0 0 20px #00ff88;
-
+0 0 20px #1ed760;
 
 transition:.3s;
 
-
 }
+
 
 
 .logo:hover{
@@ -283,15 +276,12 @@ transform:scale(1.08);
 
 
 
-
 /* SEARCH */
 
 
 .search-box{
 
 display:flex;
-
-align-items:center;
 
 gap:10px;
 
@@ -301,146 +291,88 @@ gap:10px;
 
 .search-box input{
 
-
-width:380px;
+width:420px;
 
 height:45px;
 
+border-radius:30px;
 
 border:none;
 
 outline:none;
 
-
-border-radius:30px;
-
-
-padding:0 25px;
-
-
-background:#121212;
-
+background:#181818;
 
 color:white;
 
+padding:0 20px;
 
-font-size:15px;
-
-
-transition:.3s;
-
+font-size:16px;
 
 }
-
-
-
-.search-box input:focus{
-
-
-box-shadow:
-
-0 0 20px #00ff88;
-
-
-}
-
-
-
 
 
 
 .search-box button{
 
+width:50px;
 
 height:45px;
 
-
-width:55px;
-
-
 border:none;
-
 
 border-radius:50%;
 
-
-background:#00ff88;
-
+background:#1ed760;
 
 cursor:pointer;
 
-
 font-size:18px;
 
-
-transition:.3s;
-
-
-}
-
-
-
-.search-box button:hover{
-
-
-transform:scale(1.1);
-
-
-box-shadow:
-
-0 0 20px #00ff88;
-
-
 }
 
 
 
 
 
+.profile img{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+border:3px solid #1ed760;
+
+cursor:pointer;
+
+}
 
 
-/* ======================
-SIDEBAR
-====================== */
 
+
+
+/* SIDEBAR */
 
 
 .sidebar{
 
-
 position:fixed;
-
 
 top:80px;
 
-
 left:0;
-
 
 width:240px;
 
+height:100%;
 
-height:calc(100vh - 80px);
-
-
-background:
-
-rgba(10,10,10,.85);
-
-
-backdrop-filter:blur(20px);
-
+background:#090909;
 
 padding:30px 20px;
 
-
-border-right:
-
-1px solid rgba(0,255,136,.1);
-
-
 }
-
 
 
 
@@ -452,58 +384,43 @@ list-style:none;
 
 
 
-
 .sidebar li{
 
-
-display:flex;
-
-align-items:center;
-
-gap:12px;
-
-
-padding:16px;
-
+padding:15px;
 
 margin-bottom:12px;
 
-
 border-radius:15px;
-
 
 cursor:pointer;
 
+display:flex;
 
-font-size:16px;
+gap:12px;
 
+align-items:center;
 
 transition:.3s;
 
-
 }
-
-
 
 
 
 .sidebar li:hover,
 .sidebar .active{
 
-
-background:#00ff88;
+background:#1ed760;
 
 color:black;
 
-
 transform:translateX(8px);
-
 
 }
 
-/* ======================
-MAIN CONTENT
-====================== */
+/* =========================
+   MAIN CONTENT
+   PART 2
+========================= */
 
 
 main{
@@ -512,118 +429,88 @@ margin-left:240px;
 
 padding:
 
-110px 40px 170px;
+110px 40px 150px;
 
 }
 
 
 
-
-
-/* ======================
-HERO
-====================== */
+/* =========================
+   HERO
+========================= */
 
 
 .hero{
 
+height:330px;
 
-height:320px;
-
-
-border-radius:35px;
-
+border-radius:30px;
 
 padding:50px;
 
-
 display:flex;
-
 
 flex-direction:column;
 
-
 justify-content:center;
-
-
 
 background:
 
 linear-gradient(
 135deg,
-#00ff88,
-#00b36b,
-#003b27
+#1ed760,
+#0b5e2a,
+#111
 );
 
+background-size:300% 300%;
 
+animation:
+
+heroMove 8s infinite;
 
 box-shadow:
 
-0 0 50px rgba(0,255,136,.25);
-
+0 0 50px rgba(30,215,96,.25);
 
 overflow:hidden;
 
-
 position:relative;
 
-
 }
 
 
 
+@keyframes heroMove{
 
-.hero::after{
+0%{
 
-
-content:"";
-
-
-position:absolute;
-
-
-width:300px;
-
-height:300px;
-
-
-border-radius:50%;
-
-
-right:-100px;
-
-top:-100px;
-
-
-background:
-
-rgba(255,255,255,.15);
-
-
-filter:blur(30px);
-
+background-position:0%;
 
 }
 
+50%{
+
+background-position:100%;
+
+}
+
+100%{
+
+background-position:0%;
+
+}
+
+}
 
 
 
 
 .hero h1{
 
-
-font-size:50px;
-
+font-size:52px;
 
 font-weight:800;
-
-
-max-width:800px;
-
-
-z-index:2;
-
 
 }
 
@@ -631,35 +518,25 @@ z-index:2;
 
 .hero p{
 
-
 font-size:20px;
-
 
 margin-top:15px;
 
-
-z-index:2;
-
+color:#ddd;
 
 }
 
 
 
 
-
-
-
-
-/* ======================
-SECTIONS
-====================== */
+/* =========================
+SECTION
+========================= */
 
 
 section{
 
-
 margin-top:50px;
-
 
 }
 
@@ -667,15 +544,9 @@ margin-top:50px;
 
 section h2{
 
-
-font-size:30px;
-
+font-size:32px;
 
 margin-bottom:25px;
-
-
-font-weight:700;
-
 
 }
 
@@ -683,29 +554,23 @@ font-weight:700;
 
 
 
-
-
-/* ======================
-SONG CARDS
-====================== */
+/* =========================
+SONG GRID
+========================= */
 
 
 .song-grid{
 
-
 display:grid;
-
 
 grid-template-columns:
 
 repeat(
 auto-fill,
-minmax(230px,1fr)
+minmax(220px,1fr)
 );
 
-
 gap:25px;
-
 
 }
 
@@ -713,34 +578,28 @@ gap:25px;
 
 
 
+/* =========================
+SONG CARD
+========================= */
+
 
 .song-card{
 
-
-background:
-
-rgba(20,20,20,.85);
-
-
-padding:18px;
-
+background:#111;
 
 border-radius:25px;
 
+padding:18px;
 
 border:
 
-1px solid rgba(0,255,136,.08);
+1px solid rgba(255,255,255,.06);
 
-
-overflow:hidden;
-
+transition:.4s;
 
 position:relative;
 
-
-transition:.35s;
-
+overflow:hidden;
 
 }
 
@@ -748,52 +607,39 @@ transition:.35s;
 
 .song-card:hover{
 
-
 transform:
 
 translateY(-10px);
 
-
 box-shadow:
 
-0 0 30px rgba(0,255,136,.35);
-
+0 0 35px rgba(30,215,96,.5);
 
 }
-
 
 
 
 
 .song-card img{
 
-
 width:100%;
-
 
 height:230px;
 
-
 object-fit:cover;
 
-
 border-radius:20px;
-
 
 }
 
 
 
 
-
 .song-card h3{
 
+font-size:22px;
 
 margin-top:15px;
-
-
-font-size:21px;
-
 
 }
 
@@ -801,12 +647,11 @@ font-size:21px;
 
 .song-card p{
 
-
 color:#aaa;
 
+margin:5px 0 15px;
 
-margin:8px 0 15px;
-
+font-size:14px;
 
 }
 
@@ -815,36 +660,23 @@ margin:8px 0 15px;
 
 .play-btn{
 
-
 width:100%;
-
 
 height:45px;
 
-
 border:none;
-
 
 border-radius:30px;
 
+background:#1ed760;
 
-cursor:pointer;
-
-
-background:
-
-linear-gradient(
-90deg,
-#00ff88,
-#00cc66
-);
-
+color:black;
 
 font-weight:700;
 
+cursor:pointer;
 
 transition:.3s;
-
 
 }
 
@@ -852,14 +684,11 @@ transition:.3s;
 
 .play-btn:hover{
 
-
 transform:scale(1.05);
-
 
 box-shadow:
 
-0 0 20px #00ff88;
-
+0 0 25px #1ed760;
 
 }
 
@@ -867,337 +696,342 @@ box-shadow:
 
 
 
+/* =========================
+SEARCH RESULTS
+========================= */
+
+
+#searchResults{
+
+display:none;
+
+}
 
 
 
-/* ======================
-İSTATİSTİKLER
-====================== */
+.search-title{
+
+font-size:35px;
+
+margin-bottom:30px;
+
+}
 
 
-.stats-box{
 
+.no-results{
+
+text-align:center;
+
+font-size:22px;
+
+color:#aaa;
+
+padding:50px;
+
+}
+
+
+
+
+
+/* =========================
+TOP 10
+========================= */
+
+
+.top10{
+
+margin-top:60px;
+
+}
+
+
+
+.playlist-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+
+
+
+.playlist-item{
 
 display:grid;
 
+grid-template-columns:
+
+60px 1fr 70px;
+
+align-items:center;
+
+background:#111;
+
+padding:18px 25px;
+
+border-radius:18px;
+
+transition:.3s;
+
+}
+
+
+
+.playlist-item:hover{
+
+background:#1b1b1b;
+
+transform:translateX(10px);
+
+}
+
+
+
+
+
+.playlist-item span{
+
+font-size:22px;
+
+font-weight:700;
+
+color:#1ed760;
+
+}
+
+
+
+.playlist-item p{
+
+font-size:18px;
+
+}
+
+
+
+.playlist-item button{
+
+width:45px;
+
+height:45px;
+
+border:none;
+
+border-radius:50%;
+
+background:#1ed760;
+
+cursor:pointer;
+
+font-size:18px;
+
+}
+
+
+
+
+
+.playlist-item button:hover{
+
+transform:scale(1.15);
+
+box-shadow:
+
+0 0 20px #1ed760;
+
+}
+
+
+
+
+
+/* =========================
+RECENT SONGS
+========================= */
+
+
+.recent-section{
+
+margin-top:60px;
+
+}
+
+
+
+.recent-grid{
+
+display:grid;
 
 grid-template-columns:
 
 repeat(3,1fr);
 
-
 gap:20px;
 
-
-}
-
-
-
-
-.stats-box div{
-
-
-background:
-
-rgba(20,20,20,.9);
-
-
-border-radius:25px;
-
-
-padding:30px;
-
-
-text-align:center;
-
-
-border:
-
-1px solid rgba(0,255,136,.1);
-
-
-transition:.3s;
-
-
-}
-
-
-
-.stats-box div:hover{
-
-
-transform:translateY(-8px);
-
-
-box-shadow:
-
-0 0 25px rgba(0,255,136,.3);
-
-
-}
-
-
-
-
-
-.stats-box i{
-
-
-font-size:35px;
-
-
-color:#00ff88;
-
-
-margin-bottom:15px;
-
-
-}
-
-
-
-
-.stats-box h3{
-
-
-font-size:28px;
-
-
-}
-
-
-
-
-
-.stats-box p{
-
-
-color:#aaa;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* ======================
-TOP 10
-====================== */
-
-
-#topSongs{
-
-
-display:grid;
-
-
-grid-template-columns:
-
-repeat(
-auto-fill,
-minmax(230px,1fr)
-);
-
-
-gap:25px;
-
-
-}
-
-
-
-
-
-#topSongs .song-card{
-
-
-border-left:
-
-3px solid #00ff88;
-
-
-}
-
-
-
-
-
-/* ARAMA SONUÇLARI */
-
-
-#backHome{
-
-
-background:#00ff88;
-
-
-border:none;
-
-
-padding:12px 25px;
-
-
-border-radius:25px;
-
-
-cursor:pointer;
-
-
-font-weight:700;
-
-
-margin-bottom:25px;
-
-
-}
-
-
-
-#noResults{
-
-
-font-size:20px;
-
-
-color:#aaa;
-
-
-padding:30px;
-
-
-text-align:center;
-
-
-}
-
-/* ======================
-MUSIC PLAYER
-====================== */
+  }
+
+/* =========================
+   MUSIC PLAYER
+   PART 3
+========================= */
 
 
 .player{
 
-
 position:fixed;
-
 
 left:0;
 
-
 bottom:0;
-
 
 width:100%;
 
-
 height:100px;
-
-
 
 background:
 
 rgba(10,10,10,.95);
 
-
-
 backdrop-filter:blur(25px);
 
-
-
-display:flex;
-
+display:none;
 
 align-items:center;
 
-
 justify-content:space-between;
-
-
 
 padding:0 35px;
 
-
+z-index:3000;
 
 border-top:
 
-1px solid rgba(0,255,136,.15);
-
-
-
-z-index:2000;
-
-
+1px solid rgba(30,215,96,.25);
 
 transition:.5s;
 
+animation:
+
+playerShow .4s ease;
+
+}
+
+
+
+@keyframes playerShow{
+
+from{
+
+transform:translateY(100%);
+
+}
+
+to{
+
+transform:translateY(0);
+
+}
 
 }
 
 
 
 
+/* PANEL KAPALI */
 
-/* PLAYER KAPALI */
 
 .player.closed{
 
-
 transform:
 
-translateY(80px);
-
+translateY(70px);
 
 }
 
 
 
+
+
+/* GERİ AÇMA BUTONU */
+
+
+#openPlayer{
+
+position:fixed;
+
+bottom:20px;
+
+right:25px;
+
+width:50px;
+
+height:50px;
+
+border:none;
+
+border-radius:50%;
+
+background:#1ed760;
+
+font-size:22px;
+
+cursor:pointer;
+
+z-index:4000;
+
+display:none;
+
+box-shadow:
+
+0 0 25px #1ed760;
+
+}
+
+
+
+
+
+#openPlayer:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+
+
+/* SOL */
 
 
 .player-left{
 
-
 display:flex;
-
 
 align-items:center;
 
-
 gap:15px;
 
-
-width:300px;
-
-
 }
-
-
 
 
 
 .player-left img{
 
-
 width:70px;
-
 
 height:70px;
 
-
-border-radius:18px;
-
+border-radius:15px;
 
 object-fit:cover;
-
-
-box-shadow:
-
-0 0 20px rgba(0,255,136,.3);
-
 
 }
 
@@ -1205,9 +1039,7 @@ box-shadow:
 
 .player-left h3{
 
-
 font-size:18px;
-
 
 }
 
@@ -1215,12 +1047,9 @@ font-size:18px;
 
 .player-left p{
 
-
 color:#aaa;
 
-
 font-size:14px;
-
 
 }
 
@@ -1228,20 +1057,16 @@ font-size:14px;
 
 
 
-/* PLAYER BUTONLARI */
+/* ORTA */
 
 
 .player-center{
 
-
 display:flex;
 
+gap:12px;
 
 align-items:center;
-
-
-gap:15px;
-
 
 }
 
@@ -1249,50 +1074,33 @@ gap:15px;
 
 .player-center button{
 
-
 width:45px;
-
 
 height:45px;
 
-
 border:none;
-
 
 border-radius:50%;
 
-
-background:#1c1c1c;
-
+background:#222;
 
 color:white;
 
+font-size:18px;
 
 cursor:pointer;
 
-
-font-size:18px;
-
-
 transition:.3s;
 
-
 }
-
 
 
 
 .player-center button:hover{
 
-
-background:#00ff88;
-
+background:#1ed760;
 
 color:black;
-
-
-transform:scale(1.15);
-
 
 }
 
@@ -1300,51 +1108,18 @@ transform:scale(1.15);
 
 
 
-
-
-/* AKTİF SHUFFLE REPEAT */
+/* AKTİF DURUM */
 
 
 .player-center button.active{
 
-
-background:#00ff88;
-
+background:#1ed760;
 
 color:black;
 
-
 box-shadow:
 
-0 0 20px #00ff88;
-
-
-}
-
-
-
-
-
-
-
-
-/* SES DALGASI */
-
-
-.player-wave{
-
-
-display:flex;
-
-
-align-items:center;
-
-
-gap:5px;
-
-
-height:40px;
-
+0 0 20px #1ed760;
 
 }
 
@@ -1352,143 +1127,38 @@ height:40px;
 
 
 
-.player-wave span{
-
-
-width:5px;
-
-
-height:20px;
-
-
-background:#00ff88;
-
-
-border-radius:10px;
-
-
-animation:
-
-wave .8s infinite alternate;
-
-
-animation-play-state:paused;
-
-
-}
-
-
-
-
-
-.player-wave span:nth-child(2){
-
-animation-delay:.2s;
-
-}
-
-
-
-.player-wave span:nth-child(3){
-
-animation-delay:.4s;
-
-}
-
-
-
-.player-wave span:nth-child(4){
-
-animation-delay:.6s;
-
-}
-
-
-
-
-
-.player.playing .player-wave span{
-
-
-animation-play-state:running;
-
-
-}
-
-
-
-
-@keyframes wave{
-
-
-from{
-
-
-height:10px;
-
-
-}
-
-
-to{
-
-
-height:40px;
-
-
-}
-
-
-}
-
-
-
-
-
-
-
-/* PLAYER SAĞ */
+/* SAĞ */
 
 
 .player-right{
 
-
 display:flex;
-
 
 align-items:center;
 
-
 gap:15px;
 
-
 }
 
 
 
-.player-right span{
+.time{
 
+font-size:13px;
 
-font-size:14px;
-
-
-color:#aaa;
-
+color:#bbb;
 
 }
-
-
 
 
 
 #progress{
 
+width:260px;
 
-width:230px;
+accent-color:#1ed760;
 
-
-accent-color:#00ff88;
-
+cursor:pointer;
 
 }
 
@@ -1496,145 +1166,82 @@ accent-color:#00ff88;
 
 #volume{
 
-
 width:100px;
 
-
-accent-color:#00ff88;
-
-
-}
-
-
-
-
-
-/* AÇMA KAPAMA BUTONLARI */
-
-
-#closePlayer,
-#openPlayer{
-
-
-border:none;
-
-
-background:#00ff88;
-
-
-color:black;
-
-
-width:38px;
-
-
-height:38px;
-
-
-border-radius:50%;
-
+accent-color:#1ed760;
 
 cursor:pointer;
 
-
-font-weight:bold;
-
-
 }
 
 
 
 
-#closePlayer{
+
+/* =========================
+ LYRICS
+========================= */
 
 
-position:absolute;
-
-
-right:20px;
-
-
-top:-20px;
-
-
-}
-
-
-
-#openPlayer{
-
+.lyrics-panel{
 
 position:fixed;
 
+right:-420px;
 
-right:20px;
+top:0;
 
+width:400px;
 
-bottom:20px;
+height:100%;
 
+background:#101010;
 
-display:none;
+padding:30px;
 
-
-z-index:3000;
-
-
-}
-
-
-
-
-
-
-/* ======================
-QUEUE
-====================== */
-
-
-.queue-panel{
-
-
-position:fixed;
-
-
-right:-400px;
-
-
-top:100px;
-
-
-width:350px;
-
-
-background:#111;
-
-
-border-radius:25px;
-
-
-padding:25px;
-
-
-z-index:3000;
-
+z-index:3500;
 
 transition:.5s;
 
+}
 
-box-shadow:
 
-0 0 30px rgba(0,255,136,.2);
 
+.lyrics-panel.active{
+
+right:0;
 
 }
 
 
 
-.queue-panel.active{
+.lyrics-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
 
 
-right:30px;
 
+.lyrics-header button{
+
+width:35px;
+
+height:35px;
+
+border-radius:50%;
+
+border:none;
+
+background:#222;
+
+color:white;
+
+cursor:pointer;
 
 }
 
@@ -1642,284 +1249,188 @@ right:30px;
 
 
 
-#queueList div{
-
-
-padding:15px;
-
-
-background:#1a1a1a;
-
-
-border-radius:15px;
-
-
-margin-top:10px;
-
-
-}
-
-
-
-
-
-
-
-/* ======================
-SETTINGS
-====================== */
+/* =========================
+ SETTINGS
+========================= */
 
 
 .settings-panel{
 
-
 position:fixed;
-
-
-top:100px;
-
 
 right:-400px;
 
+top:100px;
 
 width:350px;
 
-
 background:#111;
-
 
 padding:25px;
 
-
 border-radius:25px;
 
-
-z-index:3000;
-
+z-index:3500;
 
 transition:.5s;
 
-
-box-shadow:
-
-0 0 30px rgba(0,255,136,.25);
-
-
 }
 
 
 
+.settings-panel.active,
 .settings-panel.show{
-
 
 right:30px;
 
-
 }
 
 
 
 
-.settings-header{
-
+.setting-item{
 
 display:flex;
 
-
 justify-content:space-between;
-
 
 align-items:center;
 
+padding:15px;
 
-margin-bottom:25px;
+background:#1a1a1a;
 
+border-radius:15px;
+
+margin-bottom:15px;
 
 }
 
 
 
+.setting-item button,
+.setting-item select{
 
-.settings-header button{
-
+background:#1ed760;
 
 border:none;
 
+padding:8px 15px;
 
-background:#222;
-
-
-color:white;
-
-
-width:35px;
-
-
-height:35px;
-
-
-border-radius:50%;
-
+border-radius:20px;
 
 cursor:pointer;
 
-
-}
-
-/* ======================
-LIGHT MODE
-====================== */
-
-
-body.light{
-
-
-background:#f4f4f4;
-
-
-color:#111;
-
-
 }
 
 
 
 
 
-body.light header{
+/* SWITCH */
 
 
-background:
+.switch{
 
-rgba(255,255,255,.8);
+width:50px;
 
+height:25px;
 
-border-color:
-
-rgba(0,180,90,.2);
-
+position:relative;
 
 }
 
 
 
+.switch input{
+
+display:none;
+
+}
 
 
-body.light .sidebar,
+
+.slider{
+
+position:absolute;
+
+inset:0;
+
+background:#555;
+
+border-radius:30px;
+
+}
 
 
-body.light .song-card,
 
+.slider:before{
 
-body.light .stats-box div,
+content:"";
 
+position:absolute;
 
-body.light .player,
+width:20px;
 
+height:20px;
 
-body.light .settings-panel,
+left:3px;
 
-
-body.light .queue-panel{
-
+top:3px;
 
 background:white;
 
+border-radius:50%;
 
-color:#111;
-
-
-}
-
-
-
-
-body.light .search-box input{
-
-
-background:#ddd;
-
-
-color:#111;
-
+transition:.3s;
 
 }
 
 
 
+.switch input:checked + .slider{
 
-
-body.light .player-center button{
-
-
-background:#eee;
-
-
-color:#111;
-
+background:#1ed760;
 
 }
 
 
 
+.switch input:checked + .slider:before{
 
-
-body.light .player-left p,
-
-
-body.light .song-card p,
-
-
-body.light .stats-box p{
-
-
-color:#555;
-
+transform:translateX(25px);
 
 }
 
-
-
-
-
-
-
-
-
-/* ======================
-PROFILE / PANELS
-====================== */
+/* =========================
+   PROFILE PANEL
+   PART 4
+========================= */
 
 
 .profile-panel{
 
-
 position:fixed;
 
-
-right:-400px;
-
+right:-380px;
 
 top:100px;
 
-
 width:330px;
-
 
 background:#111;
 
+border-radius:25px;
 
 padding:25px;
 
+z-index:4000;
 
-border-radius:25px;
+transition:.5s;
 
+box-shadow:
 
-z-index:3000;
-
-
-transition:.4s;
-
+0 0 30px rgba(30,215,96,.3);
 
 }
 
@@ -1927,9 +1438,86 @@ transition:.4s;
 
 .profile-panel.active{
 
-
 right:30px;
 
+}
+
+
+
+.profile-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+
+.profile-header button{
+
+width:35px;
+
+height:35px;
+
+border:none;
+
+border-radius:50%;
+
+background:#222;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+
+.profile-content{
+
+text-align:center;
+
+}
+
+
+
+.profile-content img{
+
+width:100px;
+
+height:100px;
+
+border-radius:50%;
+
+border:3px solid #1ed760;
+
+margin:20px;
+
+}
+
+
+
+.profile-content button{
+
+width:100%;
+
+height:45px;
+
+border:none;
+
+border-radius:30px;
+
+margin-top:10px;
+
+background:#1ed760;
+
+font-weight:bold;
+
+cursor:pointer;
 
 }
 
@@ -1937,19 +1525,63 @@ right:30px;
 
 
 
+/* =========================
+LIGHT MODE
+========================= */
+
+
+body.light{
+
+background:#f5f5f5;
+
+color:#111;
+
+}
 
 
 
-/* ======================
+body.light header{
+
+background:white;
+
+}
+
+
+
+body.light .sidebar,
+body.light .song-card,
+body.light .playlist-item,
+body.light .player,
+body.light .settings-panel,
+body.light .profile-panel{
+
+background:white;
+
+color:#111;
+
+}
+
+
+
+body.light .song-card p,
+body.light .player-left p{
+
+color:#555;
+
+}
+
+
+
+
+
+/* =========================
 MOBILE NAV
-====================== */
+========================= */
 
 
 .mobile-nav{
 
-
 display:none;
-
 
 }
 
@@ -1957,23 +1589,17 @@ display:none;
 
 
 
+/* =========================
+RESPONSIVE PC TABLET
+========================= */
 
 
-
-/* ======================
-TABLET
-====================== */
-
-
-@media(max-width:1100px){
-
+@media(max-width:1000px){
 
 
 .sidebar{
 
-
 display:none;
-
 
 }
 
@@ -1981,67 +1607,76 @@ display:none;
 
 main{
 
-
 margin-left:0;
-
 
 padding:
 
-100px 25px 160px;
-
+100px 20px 160px;
 
 }
-
-
 
 
 
 .search-box input{
 
-
 width:250px;
 
+}
+
+
+
+.hero h1{
+
+font-size:38px;
 
 }
 
 
 
+.player{
 
-.stats-box{
+height:auto;
 
+min-height:120px;
 
-grid-template-columns:1fr;
+flex-direction:column;
 
+gap:15px;
+
+padding:20px;
 
 }
-
-
 
 
 
 .player-left{
 
+width:100%;
 
-width:auto;
+justify-content:center;
+
+}
+
+
+
+.player-right{
+
+width:100%;
+
+justify-content:center;
+
+}
 
 
 }
 
 
 
-}
 
 
-
-
-
-
-
-
-
-/* ======================
+/* =========================
 PHONE
-====================== */
+========================= */
 
 
 @media(max-width:700px){
@@ -2050,18 +1685,13 @@ PHONE
 
 header{
 
-
 height:auto;
-
 
 padding:15px;
 
-
 flex-wrap:wrap;
 
-
 gap:15px;
-
 
 }
 
@@ -2069,69 +1699,51 @@ gap:15px;
 
 .logo{
 
-
-font-size:23px;
-
+font-size:24px;
 
 }
-
 
 
 
 .search-box{
 
-
 width:100%;
 
-
 }
-
 
 
 
 .search-box input{
 
-
 width:100%;
 
-
 }
 
 
 
+.profile img{
 
-main{
+width:45px;
 
-
-padding:
-
-150px 15px 170px;
-
+height:45px;
 
 }
-
 
 
 
 .hero{
 
-
-height:300px;
-
+height:280px;
 
 padding:30px;
-
 
 }
 
 
 
-
 .hero h1{
 
-
 font-size:30px;
-
 
 }
 
@@ -2139,9 +1751,7 @@ font-size:30px;
 
 .hero p{
 
-
 font-size:16px;
-
 
 }
 
@@ -2151,9 +1761,7 @@ font-size:16px;
 
 .song-grid{
 
-
 grid-template-columns:1fr;
-
 
 }
 
@@ -2161,109 +1769,51 @@ grid-template-columns:1fr;
 
 
 
+.playlist-item{
+
+grid-template-columns:
+
+40px 1fr 50px;
+
+padding:15px;
+
+}
 
 
-/* MOBİL PLAYER */
+
 
 
 .player{
 
-
-height:auto;
-
-
-min-height:150px;
-
-
-flex-direction:column;
-
-
-gap:15px;
-
-
-padding:15px;
-
+bottom:65px;
 
 }
-
-
-
-.player-left{
-
-
-width:100%;
-
-
-justify-content:center;
-
-
-}
-
-
-
-
-
-.player-center{
-
-
-gap:8px;
-
-
-}
-
-
 
 
 
 .player-center button{
 
-
 width:38px;
-
 
 height:38px;
 
-
 font-size:15px;
 
-
 }
-
-
-
-
-
-.player-right{
-
-
-width:100%;
-
-
-flex-direction:column;
-
-
-}
-
-
 
 
 
 #progress{
 
-
-width:90%;
-
+width:170px;
 
 }
-
 
 
 
 #volume{
 
-
-width:70%;
-
+display:none;
 
 }
 
@@ -2271,47 +1821,27 @@ width:70%;
 
 
 
-
-/* ALT NAV */
-
-
 .mobile-nav{
-
-
-display:flex;
-
 
 position:fixed;
 
-
 bottom:0;
-
 
 left:0;
 
-
 width:100%;
-
 
 height:65px;
 
-
 background:#111;
 
-
-z-index:2500;
-
+display:flex;
 
 justify-content:space-around;
 
-
 align-items:center;
 
-
-border-top:
-
-1px solid rgba(0,255,136,.2);
-
+z-index:5000;
 
 }
 
@@ -2319,27 +1849,19 @@ border-top:
 
 .mobile-nav button{
 
+background:none;
 
 border:none;
 
-
-background:none;
-
-
 color:white;
-
 
 display:flex;
 
-
 flex-direction:column;
 
-
-align-items:center;
-
+gap:5px;
 
 font-size:12px;
-
 
 }
 
@@ -2347,11 +1869,54 @@ font-size:12px;
 
 .mobile-nav i{
 
-
 font-size:20px;
 
+}
 
-color:#00ff88;
+
+
+.settings-panel{
+
+width:90%;
+
+right:-100%;
+
+}
+
+
+
+.settings-panel.show{
+
+right:5%;
+
+}
+
+
+
+.profile-panel{
+
+width:90%;
+
+right:-100%;
+
+}
+
+
+
+.profile-panel.active{
+
+right:5%;
+
+}
+
+
+
+.lyrics-panel{
+
+width:100%;
+
+}
+
 
 
 }
@@ -2359,52 +1924,42 @@ color:#00ff88;
 
 
 
-}
+
+/* =========================
+ANIMATIONS
+========================= */
 
 
-
-
-/* ======================
-ANİMASYONLAR
-====================== */
-
-
-.fade{
-
+.song-card{
 
 animation:
 
-fade .4s ease;
-
-
-}
-
-
-
-@keyframes fade{
-
-
-from{
-
-
-opacity:0;
-
-
-transform:translateY(20px);
-
+cardFloat 5s infinite;
 
 }
 
 
 
-to{
+@keyframes cardFloat{
 
 
-opacity:1;
+0%{
+
+transform:translateY(0);
+
+}
 
 
-transform:none;
+50%{
 
+transform:translateY(-6px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
 
 }
 
@@ -2414,76 +1969,16 @@ transform:none;
 
 
 
+button{
 
+transition:.3s;
 
-/* BUTTON PRESS */
+}
+
 
 
 button:active{
 
-
 transform:scale(.95);
-
-
-}
-
-
-
-
-
-/* SONG PLAYING EFFECT */
-
-
-.song-card.playing{
-
-
-border:
-
-2px solid #00ff88;
-
-
-box-shadow:
-
-0 0 35px rgba(0,255,136,.5);
-
-
-}
-
-
-
-
-
-/* TOP SONG NUMBER */
-
-
-.rank{
-
-
-font-size:35px;
-
-
-font-weight:800;
-
-
-color:#00ff88;
-
-
-}
-
-
-
-
-
-/* EMPTY SONG */
-
-
-.empty-song{
-
-
-opacity:.5;
-
-
-filter:grayscale(1);
-
 
 }
