@@ -9,12 +9,8 @@
 
 <title>MusicWave</title>
 
+
 <link rel="stylesheet" href="style.css">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,8 +37,6 @@
 
 
 
-
-
 <header>
 
 
@@ -57,12 +51,9 @@
 <div class="search-box">
 
 
-<input
-
-type="text"
-
+<input 
 id="searchInput"
-
+type="text"
 placeholder="Şarkı veya sanatçı ara...">
 
 
@@ -71,6 +62,20 @@ placeholder="Şarkı veya sanatçı ara...">
 <i class="fa-solid fa-magnifying-glass"></i>
 
 </button>
+
+
+</div>
+
+
+
+
+<div class="profile">
+
+
+<img 
+id="profileImage"
+src="images/profile.png"
+alt="Profil">
 
 
 </div>
@@ -98,7 +103,7 @@ Ana Sayfa
 
 
 
-<li id="trendBtn">
+<li>
 
 <i class="fa-solid fa-fire"></i>
 
@@ -108,7 +113,7 @@ Trendler
 
 
 
-<li id="favoriteBtn">
+<li>
 
 <i class="fa-solid fa-heart"></i>
 
@@ -118,9 +123,9 @@ Favoriler
 
 
 
-<li id="albumBtn">
+<li>
 
-<i class="fa-solid fa-compact-disc"></i>
+<i class="fa-solid fa-music"></i>
 
 Albümler
 
@@ -128,7 +133,7 @@ Albümler
 
 
 
-<li id="artistBtn">
+<li>
 
 <i class="fa-solid fa-microphone"></i>
 
@@ -156,7 +161,7 @@ Ayarlar
 
 
 
-<main id="mainContent">
+<main>
 
 
 <section class="hero" id="heroSection">
@@ -171,21 +176,43 @@ Müziğin Yeni Dünyasına Hoş Geldin
 
 <p>
 
-Keşfet, dinle ve kendi müzik deneyimini oluştur.
+Dinle, keşfet ve kendi müzik dünyanı oluştur.
 
 </p>
 
 
 </section>
 
-    <!-- SON DİNLENENLER -->
 
-<section class="recent-section" id="recentSection">
+
+
+
+<section id="songsSection">
 
 
 <h2>
 
-🎧 Son Dinlediklerin
+Trend Şarkılar
+
+</h2>
+
+
+<div 
+class="song-grid"
+id="songGrid">
+
+
+</div>
+
+
+</section>
+
+    <section class="recent-section" id="recentSection">
+
+
+<h2>
+
+Son Dinlenenler
 
 </h2>
 
@@ -202,114 +229,23 @@ Keşfet, dinle ve kendi müzik deneyimini oluştur.
 
 
 
-<!-- İSTATİSTİKLER -->
-
-
-<section class="stats-section" id="statsSection">
+<section class="top10" id="topSection">
 
 
 <h2>
 
-📊 Senin İstatistiklerin
+İlk 10
 
 </h2>
 
 
-<div class="stats-box">
-
-
-<div>
-
-<i class="fa-solid fa-music"></i>
-
-<h3 id="totalSongs">
-
-0
-
-</h3>
-
-<p>
-
-Şarkı Dinlendi
-
-</p>
-
-</div>
-
-
-
-<div>
-
-<i class="fa-solid fa-clock"></i>
-
-<h3 id="totalTime">
-
-0 dk
-
-</h3>
-
-<p>
-
-Toplam Süre
-
-</p>
-
-</div>
-
-
-
-<div>
-
-<i class="fa-solid fa-fire"></i>
-
-<h3 id="mostPlayed">
-
--
-
-</h3>
-
-<p>
-
-En Çok Dinlenen
-
-</p>
-
-</div>
-
+<div class="playlist-list" id="topSongs">
 
 
 </div>
 
 
 </section>
-
-
-
-
-
-
-<!-- TÜM ŞARKILAR -->
-
-
-<section class="songs" id="songsSection">
-
-
-<h2>
-
-🎵 Tüm Şarkılar
-
-</h2>
-
-
-<div class="song-grid" id="songGrid">
-
-
-</div>
-
-
-</section>
-
-
 
 
 
@@ -318,20 +254,12 @@ En Çok Dinlenen
 <!-- ARAMA SONUÇLARI -->
 
 
-<section class="search-results" id="searchResults" style="display:none;">
+<section id="searchResults">
 
 
-<button id="backHome">
+<h2 class="search-title">
 
-← Ana Sayfa
-
-</button>
-
-
-
-<h2>
-
-🔎 Arama Sonuçları
+Arama Sonuçları
 
 </h2>
 
@@ -342,44 +270,30 @@ En Çok Dinlenen
 </div>
 
 
-<p id="noResults" style="display:none;">
 
-Bu isimde bir müzik bulunamadı.
+<div id="noResults" class="no-results" style="display:none;">
 
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- EN ÇOK DİNLENENLER -->
-
-
-<section class="top10" id="topSection">
-
-
-<h2>
-
-🔥 En Çok Dinlenenler
-
-</h2>
-
-
-
-<div class="song-grid" id="topSongs">
-
+Şu anlık böyle bir müzik yok.
 
 </div>
 
 
 </section>
 
-    <!-- MUSIC PLAYER -->
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<!-- MÜZİK PLAYER -->
 
 
 <footer class="player" id="player">
@@ -389,11 +303,9 @@ Bu isimde bir müzik bulunamadı.
 <div class="player-left">
 
 
-<img
+<img 
 id="playerImage"
-src="images/believer.jpg"
-alt="Kapak">
-
+src="images/default.jpg">
 
 
 <div>
@@ -401,10 +313,9 @@ alt="Kapak">
 
 <h3 id="musicName">
 
-Şarkı Seçilmedi
+Şarkı seçilmedi
 
 </h3>
-
 
 
 <p id="artistName">
@@ -414,11 +325,11 @@ Sanatçı
 </p>
 
 
-
 </div>
 
 
 </div>
+
 
 
 
@@ -481,25 +392,11 @@ Sanatçı
 
 
 
-<div class="player-wave" id="musicWave">
-
-
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-
-
-</div>
-
-
-
-
 
 <div class="player-right">
 
 
-<div>
+<div class="time">
 
 
 <span id="currentTime">
@@ -523,36 +420,17 @@ Sanatçı
 
 
 
-<input
 
+<input 
 type="range"
-
 id="progress"
-
 min="0"
-
 max="100"
-
 value="0">
 
 
 
-<input
-
-type="range"
-
-id="volume"
-
-min="0"
-
-max="100"
-
-value="100">
-
-
 </div>
-
-
 
 
 
@@ -561,6 +439,11 @@ value="100">
 ▼
 
 </button>
+
+
+</footer>
+
+
 
 
 
@@ -572,42 +455,46 @@ value="100">
 
 
 
-</footer>
 
 
+<!-- ŞARKI SÖZLERİ -->
 
 
+<div class="lyrics-panel" id="lyricsPanel">
 
 
-
-<!-- QUEUE PANEL -->
-
-
-<div class="queue-panel" id="queuePanel">
+<div class="lyrics-header">
 
 
 <h2>
 
-Sıradaki Şarkılar
+🎤 Şarkı Sözleri
 
 </h2>
 
 
-<div id="queueList">
+
+<button id="closeLyrics">
+
+✕
+
+</button>
 
 
 </div>
 
 
+
+<p id="lyricsText">
+
+Şarkı sözleri burada görünecek.
+
+</p>
+
+
 </div>
 
-
-
-
-
-
-
-<!-- SETTINGS -->
+    <!-- AYARLAR PANELİ -->
 
 
 <div class="settings-panel" id="settingsPanel">
@@ -635,20 +522,25 @@ Sıradaki Şarkılar
 
 
 
+
 <div class="setting-item">
 
 
 <span>
 
-🌙 Dark Mode
+🌙 Karanlık Mod
 
 </span>
+
 
 
 <label class="switch">
 
 
-<input type="checkbox" id="darkMode" checked>
+<input 
+type="checkbox"
+id="darkMode"
+checked>
 
 
 <span class="slider"></span>
@@ -668,7 +560,7 @@ Sıradaki Şarkılar
 
 <span>
 
-☀️ Light Mode
+☀️ Aydınlık Mod
 
 </span>
 
@@ -684,6 +576,49 @@ Aç
 
 
 
+
+
+<div class="setting-item">
+
+
+<span>
+
+🎨 Tema
+
+</span>
+
+
+<select id="themeSelect">
+
+
+<option>
+
+Yeşil
+
+</option>
+
+
+<option>
+
+Siyah
+
+</option>
+
+
+<option>
+
+Beyaz
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
 </div>
 
 
@@ -692,7 +627,85 @@ Aç
 
 
 
-<!-- MOBILE MENU -->
+
+<!-- PROFİL PANELİ -->
+
+
+<div class="profile-panel" id="profilePanel">
+
+
+
+<div class="profile-header">
+
+
+<h2>
+
+👤 Profil
+
+</h2>
+
+
+
+<button id="closeProfile">
+
+✕
+
+</button>
+
+
+</div>
+
+
+
+
+
+<div class="profile-content">
+
+
+<img 
+id="userAvatar"
+src="images/profile.png">
+
+
+
+<h3 id="username">
+
+Misafir
+
+</h3>
+
+
+
+
+<button id="loginBtn">
+
+Giriş Yap
+
+</button>
+
+
+
+<button id="registerBtn">
+
+Kayıt Ol
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- MOBİL ALT MENÜ -->
 
 
 <nav class="mobile-nav">
@@ -700,7 +713,9 @@ Aç
 
 <button id="mobileHome">
 
+
 <i class="fa-solid fa-house"></i>
+
 
 <span>
 
@@ -708,13 +723,19 @@ Ana Sayfa
 
 </span>
 
+
 </button>
+
+
+
 
 
 
 <button id="mobileSearch">
 
+
 <i class="fa-solid fa-magnifying-glass"></i>
+
 
 <span>
 
@@ -722,35 +743,65 @@ Ara
 
 </span>
 
+
 </button>
+
+
+
+
 
 
 
 <button id="mobileFavorite">
 
+
 <i class="fa-solid fa-heart"></i>
+
 
 <span>
 
-Favoriler
+Favori
 
 </span>
+
 
 </button>
 
 
+
+
+
+
+
+<button id="mobileProfile">
+
+
+<i class="fa-solid fa-user"></i>
+
+
+<span>
+
+Profil
+
+</span>
+
+
+</button>
+
+
+
 </nav>
 
-
-
-
-
+    <!-- AUDIO PLAYER -->
 
 
 <audio id="audioPlayer"></audio>
 
 
 
+
+
+<!-- JAVASCRIPT -->
 
 
 <script src="script.js"></script>
