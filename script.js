@@ -1,4 +1,12 @@
+// =========================
+// MUSICWAVE SCRIPT
+// PART 1
+// =========================
+
+
+
 const songs = [
+
 
 {
 name:"Believer",
@@ -8,6 +16,8 @@ audio:"music/believer.mp3",
 plays:0
 },
 
+
+
 {
 name:"Shape Of You",
 artist:"Ed Sheeran",
@@ -15,6 +25,8 @@ image:"images/shape.jpg",
 audio:"music/shape.mp3",
 plays:0
 },
+
+
 
 {
 name:"Blinding Lights",
@@ -24,6 +36,8 @@ audio:"music/blinding.mp3",
 plays:0
 },
 
+
+
 {
 name:"Lovely",
 artist:"Billie Eilish",
@@ -31,6 +45,8 @@ image:"images/lovely.jpg",
 audio:"music/lovely.mp3",
 plays:0
 },
+
+
 
 {
 name:"Faded",
@@ -40,6 +56,8 @@ audio:"music/faded.mp3",
 plays:0
 },
 
+
+
 {
 name:"Animals",
 artist:"Maroon 5",
@@ -48,28 +66,38 @@ audio:"music/animals.mp3",
 plays:0
 }
 
+
+
 ];
 
+
+
+
+
+
+
+
+// ELEMANLAR
 
 
 const audio =
 document.getElementById("audioPlayer");
 
 
+
 const songGrid =
 document.getElementById("songGrid");
 
-
-const topSongs =
-document.getElementById("topSongs");
 
 
 const recentSongs =
 document.getElementById("recentSongs");
 
 
-const searchGrid =
-document.getElementById("searchGrid");
+
+const topSongs =
+document.getElementById("topSongs");
+
 
 
 const player =
@@ -77,36 +105,91 @@ document.getElementById("player");
 
 
 
+const playerImage =
+document.getElementById("playerImage");
+
+
+
 const musicName =
 document.getElementById("musicName");
+
 
 
 const artistName =
 document.getElementById("artistName");
 
 
-const playerImage =
-document.getElementById("playerImage");
+
+const playBtn =
+document.getElementById("play");
+
+
+
+const pauseBtn =
+document.getElementById("pause");
+
+
+
+const nextBtn =
+document.getElementById("next");
+
+
+
+const prevBtn =
+document.getElementById("prev");
+
+
+
+const progress =
+document.getElementById("progress");
+
+
 
 
 
 let currentSong = 0;
 
 
-let shuffleMode = false;
+
+let shuffleMode=false;
 
 
-let repeatMode = false;
+let repeatMode=false;
 
+
+
+let counted=false;
+
+
+
+
+
+// KAYITLAR
 
 
 let history =
-JSON.parse(localStorage.getItem("history")) || [];
+JSON.parse(
+localStorage.getItem("history")
+)
+||
+[];
+
 
 
 
 let stats =
-JSON.parse(localStorage.getItem("musicStats")) || {};
+JSON.parse(
+localStorage.getItem("stats")
+)
+||
+{
+
+total:0,
+
+time:0
+
+};
+
 
 
 
@@ -114,26 +197,31 @@ JSON.parse(localStorage.getItem("musicStats")) || {};
 
 function saveData(){
 
+
 localStorage.setItem(
 "history",
 JSON.stringify(history)
 );
 
 
+
 localStorage.setItem(
-"musicStats",
+"stats",
 JSON.stringify(stats)
 );
 
+
+
 }
 
+// =========================
+// ŞARKI KARTLARI
+// =========================
 
-
-
-// KART OLUŞTUR
 
 
 function createCard(song,index){
+
 
 return `
 
@@ -143,18 +231,29 @@ return `
 <img src="${song.image}">
 
 
-<h3>${song.name}</h3>
+
+<h3>
+
+${song.name}
+
+</h3>
 
 
-<p>${song.artist}</p>
+
+<p>
+
+${song.artist}
+
+</p>
 
 
-<button class="play-btn"
-onclick="playSelected(${index})">
+
+<button class="play-btn" onclick="playSelected(${index})">
 
 ▶ Dinle
 
 </button>
+
 
 
 </div>
@@ -166,18 +265,21 @@ onclick="playSelected(${index})">
 
 
 
-// ANA LİSTE
+
 
 
 function renderSongs(){
+
 
 songGrid.innerHTML="";
 
 
 songs.forEach((song,index)=>{
 
+
 songGrid.innerHTML +=
 createCard(song,index);
+
 
 });
 
@@ -188,22 +290,47 @@ createCard(song,index);
 
 
 
-// OYNATMA
+
+
+
+// =========================
+// ŞARKI BAŞLATMA
+// =========================
+
 
 
 function playSelected(index){
 
+
 currentSong=index;
+
 
 loadSong(index);
 
-playSong();
-
-addHistory(index);
 
 player.style.display="flex";
 
+
+player.classList.remove("closed");
+
+
+
+document
+.getElementById("openPlayer")
+.classList.remove("show");
+
+
+
+playSong();
+
+
+addHistory(index);
+
+
 }
+
+
+
 
 
 
@@ -211,24 +338,36 @@ player.style.display="flex";
 
 function loadSong(index){
 
+
 let song=songs[index];
 
 
-musicName.textContent=song.name;
+musicName.textContent=
+song.name;
 
 
-artistName.textContent=song.artist;
+
+artistName.textContent=
+song.artist;
 
 
-playerImage.src=song.image;
+
+playerImage.src=
+song.image;
 
 
-audio.src=song.audio;
+
+audio.src=
+song.audio;
+
 
 
 audio.load();
 
+
 }
+
+
 
 
 
@@ -236,14 +375,32 @@ audio.load();
 
 function playSong(){
 
+
 audio.play()
+.then(()=>{
+
+
+console.log(
+"Çalıyor:",
+songs[currentSong].name
+);
+
+
+})
 .catch(()=>{
 
-console.log("Dosya bulunamadı");
+
+console.log(
+"Ses dosyası bulunamadı"
+);
+
 
 });
 
+
 }
+
+
 
 
 
@@ -251,40 +408,35 @@ console.log("Dosya bulunamadı");
 
 function pauseSong(){
 
+
 audio.pause();
+
 
 }
 
+
+
+
+
+
+
+
 // =========================
-// PLAYER KONTROLLERİ
+// NEXT PREVIOUS
 // =========================
 
 
-document.getElementById("play").onclick=()=>{
 
-playSong();
-
-};
-
-
-
-document.getElementById("pause").onclick=()=>{
-
-pauseSong();
-
-};
-
-
-
-
-
-document.getElementById("next").onclick=()=>{
+function nextSong(){
 
 
 if(shuffleMode){
 
+
 currentSong =
-Math.floor(Math.random()*songs.length);
+Math.floor(
+Math.random()*songs.length
+);
 
 
 }
@@ -301,6 +453,7 @@ currentSong=0;
 
 }
 
+
 }
 
 
@@ -312,14 +465,14 @@ playSong();
 addHistory(currentSong);
 
 
-};
+}
 
 
 
 
 
 
-document.getElementById("prev").onclick=()=>{
+function previousSong(){
 
 
 currentSong--;
@@ -332,12 +485,14 @@ currentSong=songs.length-1;
 }
 
 
+
 loadSong(currentSong);
+
 
 playSong();
 
 
-};
+}
 
 
 
@@ -348,6 +503,7 @@ playSong();
 // =========================
 // SON DİNLENENLER
 // =========================
+
 
 
 function addHistory(index){
@@ -379,10 +535,13 @@ renderRecent();
 
 
 
+
+
 function renderRecent(){
 
 
 recentSongs.innerHTML="";
+
 
 
 history.forEach(index=>{
@@ -406,13 +565,83 @@ index
 
 
 
+
 // =========================
-// DİNLEME SAYACI
+// İLK 10
 // =========================
 
 
-let counted=false;
 
+function renderTop(){
+
+
+topSongs.innerHTML="";
+
+
+
+let sorted =
+[...songs]
+.sort(
+(a,b)=>
+b.plays-a.plays
+);
+
+
+
+sorted.forEach((song,i)=>{
+
+
+let index =
+songs.indexOf(song);
+
+
+
+topSongs.innerHTML += `
+
+
+<div class="playlist-item">
+
+
+<span>
+
+${String(i+1).padStart(2,"0")}
+
+</span>
+
+
+
+<p>
+
+${song.name}
+
+</p>
+
+
+
+<button onclick="playSelected(${index})">
+
+▶
+
+</button>
+
+
+
+</div>
+
+
+`;
+
+
+
+});
+
+
+
+}
+
+// =========================
+// DİNLENME SAYACI
+// =========================
 
 
 audio.addEventListener(
@@ -420,26 +649,28 @@ audio.addEventListener(
 ()=>{
 
 
-if(!audio.duration)
-return;
+if(!audio.duration) return;
 
 
 
 let percent =
-(audio.currentTime/audio.duration)*100;
+(audio.currentTime / audio.duration) * 100;
 
 
 
-if(percent>=50 && !counted){
-
+if(percent >= 50 && !counted){
 
 
 songs[currentSong].plays++;
 
 
 
-stats.total =
-(stats.total||0)+1;
+stats.total++;
+
+
+
+stats.time +=
+Math.floor(audio.currentTime);
 
 
 
@@ -451,10 +682,15 @@ renderTop();
 
 
 
+updateStats();
+
+
+
 counted=true;
 
 
 }
+
 
 
 });
@@ -479,445 +715,46 @@ counted=false;
 
 
 
-
-
 // =========================
-// İLK 10
+// PLAYER BUTONLARI
 // =========================
 
 
-function renderTop(){
 
+playBtn.onclick=()=>{
 
-topSongs.innerHTML="";
-
-
-
-let sorted =
-[...songs].sort(
-(a,b)=>b.plays-a.plays
-);
-
-
-
-
-sorted.slice(0,10)
-.forEach((song,index)=>{
-
-
-let realIndex =
-songs.indexOf(song);
-
-
-
-topSongs.innerHTML += `
-
-
-<div class="playlist-item">
-
-
-<span>
-${String(index+1).padStart(2,"0")}
-</span>
-
-
-<p>
-${song.name}
-<br>
-<small>${song.artist}</small>
-</p>
-
-
-<button onclick="playSelected(${realIndex})">
-
-▶
-
-</button>
-
-
-</div>
-
-
-`;
-
-
-});
-
-
-}
-
-
-
-
-
-
-
-// =========================
-// ARAMA
-// =========================
-
-
-const searchInput =
-document.getElementById("searchInput");
-
-
-document.getElementById("searchBtn")
-.onclick=searchSongs;
-
-
-
-
-function searchSongs(){
-
-
-let value =
-searchInput.value
-.toLowerCase()
-.trim();
-
-
-
-if(value==="")
-return;
-
-
-
-document.getElementById("songsSection")
-.style.display="none";
-
-
-
-document.getElementById("recentSection")
-.style.display="none";
-
-
-
-document.getElementById("topSection")
-.style.display="none";
-
-
-
-document.getElementById("heroSection")
-.style.display="none";
-
-
-
-document.getElementById("searchResults")
-.style.display="block";
-
-
-
-
-searchGrid.innerHTML="";
-
-
-
-let results =
-songs.filter(song=>
-
-
-song.name.toLowerCase()
-.includes(value)
-
-||
-
-song.artist.toLowerCase()
-.includes(value)
-
-);
-
-
-
-
-
-if(results.length===0){
-
-
-document.getElementById("noResults")
-.style.display="block";
-
-
-return;
-
-
-}
-
-
-
-document.getElementById("noResults")
-.style.display="none";
-
-
-
-
-
-results.forEach(song=>{
-
-
-let index=songs.indexOf(song);
-
-
-searchGrid.innerHTML +=
-createCard(song,index);
-
-
-
-});
-
-
-}
-
-
-
-
-
-searchInput.addEventListener(
-"keydown",
-(e)=>{
-
-
-if(e.key==="Enter"){
-
-searchSongs();
-
-}
-
-
-});
-
-// =========================
-// ANA SAYFAYA DÖNÜŞ
-// =========================
-
-
-function goHome(){
-
-
-searchInput.value="";
-
-
-
-document.getElementById("searchResults")
-.style.display="none";
-
-
-
-document.getElementById("songsSection")
-.style.display="block";
-
-
-
-document.getElementById("recentSection")
-.style.display="block";
-
-
-
-document.getElementById("topSection")
-.style.display="block";
-
-
-
-document.getElementById("heroSection")
-.style.display="flex";
-
-
-}
-
-
-
-document.getElementById("homeLogo")
-.onclick=goHome;
-
-
-document.getElementById("homeBtn")
-.onclick=goHome;
-
-
-
-
-
-
-
-
-// =========================
-// LOGOYA BASINCA YENİLE
-// =========================
-
-
-document.getElementById("homeLogo")
-.addEventListener(
-"dblclick",
-()=>{
-
-location.reload();
-
-});
-
-
-
-
-
-
-
-// =========================
-// SHUFFLE
-// =========================
-
-
-document.getElementById("shuffle")
-.onclick=()=>{
-
-
-shuffleMode=!shuffleMode;
-
-
-
-document.getElementById("shuffle")
-.classList.toggle(
-"active",
-shuffleMode
-);
-
-
-
-if(shuffleMode){
-
-repeatMode=false;
-
-
-document.getElementById("repeat")
-.classList.remove("active");
-
-}
-
-
-};
-
-
-
-
-
-
-
-
-// =========================
-// REPEAT
-// =========================
-
-
-document.getElementById("repeat")
-.onclick=()=>{
-
-
-repeatMode=!repeatMode;
-
-
-
-document.getElementById("repeat")
-.classList.toggle(
-"active",
-repeatMode
-);
-
-
-
-if(repeatMode){
-
-
-shuffleMode=false;
-
-
-document.getElementById("shuffle")
-.classList.remove("active");
-
-
-}
-
-
-
-};
-
-
-
-
-
-
-
-
-// ŞARKI BİTİNCE
-
-
-audio.addEventListener(
-"ended",
-()=>{
-
-
-if(repeatMode){
-
-
-audio.currentTime=0;
 
 playSong();
 
 
-}
-
-else{
-
-
-document.getElementById("next")
-.click();
-
-
-}
+};
 
 
 
-});
+pauseBtn.onclick=()=>{
 
 
-
-
-
-
-
-
-
-// =========================
-// PLAYER AÇ KAPA
-// =========================
-
-
-
-document.getElementById("closePlayer")
-.onclick=()=>{
-
-
-player.classList.add("closed");
-
-
-
-document.getElementById("openPlayer")
-.style.display="block";
+pauseSong();
 
 
 };
 
 
 
+nextBtn.onclick=()=>{
+
+
+nextSong();
+
+
+};
 
 
 
-document.getElementById("openPlayer")
-.onclick=()=>{
+prevBtn.onclick=()=>{
 
 
-player.classList.remove("closed");
-
-
-
-document.getElementById("openPlayer")
-.style.display="none";
+previousSong();
 
 
 };
@@ -930,236 +767,8 @@ document.getElementById("openPlayer")
 
 
 // =========================
-// AYARLAR
+// SÜRE
 // =========================
-
-
-
-const settingsPanel =
-document.getElementById("settingsPanel");
-
-
-
-document.getElementById("settingsBtn")
-.onclick=()=>{
-
-
-settingsPanel.classList.add("show");
-
-
-};
-
-
-
-
-
-document.getElementById("closeSettings")
-.onclick=()=>{
-
-
-settingsPanel.classList.remove("show");
-
-
-};
-
-
-
-
-
-
-
-// =========================
-// DARK / LIGHT MODE
-// =========================
-
-
-
-const darkMode =
-document.getElementById("darkMode");
-
-
-
-
-darkMode.onchange=()=>{
-
-
-if(darkMode.checked){
-
-
-document.body.classList.remove("light");
-
-
-localStorage.setItem(
-"theme",
-"dark"
-);
-
-
-
-}
-
-else{
-
-
-document.body.classList.add("light");
-
-
-localStorage.setItem(
-"theme",
-"light"
-);
-
-
-
-}
-
-
-
-};
-
-
-
-
-
-
-document.getElementById("lightMode")
-.onclick=()=>{
-
-
-darkMode.checked=false;
-
-
-document.body.classList.add("light");
-
-
-localStorage.setItem(
-"theme",
-"light"
-);
-
-
-};
-
-
-
-
-
-
-
-// KAYITLI TEMA
-
-
-if(
-localStorage.getItem("theme")
-==="light"
-){
-
-
-document.body.classList.add("light");
-
-
-darkMode.checked=false;
-
-
-  }
-
-// =========================
-// PROFİL PANELİ
-// =========================
-
-
-const profilePanel =
-document.getElementById("profilePanel");
-
-
-
-document.getElementById("profileImage")
-.onclick=()=>{
-
-
-profilePanel.classList.add("active");
-
-
-};
-
-
-
-
-
-document.getElementById("closeProfile")
-.onclick=()=>{
-
-
-profilePanel.classList.remove("active");
-
-
-};
-
-
-
-
-
-
-
-
-// =========================
-// MOBİL MENÜ
-// =========================
-
-
-
-document.getElementById("mobileHome")
-.onclick=()=>{
-
-
-goHome();
-
-
-};
-
-
-
-
-
-document.getElementById("mobileSearch")
-.onclick=()=>{
-
-
-searchInput.focus();
-
-
-};
-
-
-
-
-
-
-document.getElementById("mobileProfile")
-.onclick=()=>{
-
-
-profilePanel.classList.add("active");
-
-
-};
-
-
-
-
-
-
-
-
-// =========================
-// PROGRESS BAR
-// =========================
-
-
-
-const progress =
-document.getElementById("progress");
-
 
 
 audio.addEventListener(
@@ -1172,23 +781,27 @@ if(audio.duration){
 
 
 progress.value =
-(audio.currentTime/audio.duration)*100;
+(audio.currentTime /
+audio.duration)*100;
 
 
 
-document.getElementById("currentTime")
-.textContent =
+document.getElementById(
+"currentTime"
+).textContent =
 formatTime(audio.currentTime);
 
 
 
-document.getElementById("duration")
-.textContent =
+document.getElementById(
+"duration"
+).textContent =
 formatTime(audio.duration);
 
 
 
 }
+
 
 
 });
@@ -1201,11 +814,12 @@ progress.oninput=()=>{
 
 
 audio.currentTime =
-(progress.value/100)*audio.duration;
+(progress.value/100)
+*
+audio.duration;
 
 
 };
-
 
 
 
@@ -1250,6 +864,353 @@ return min+":"+sec;
 
 
 // =========================
+// RASTGELE
+// =========================
+
+
+
+document
+.getElementById("shuffle")
+.onclick=()=>{
+
+
+shuffleMode =
+!shuffleMode;
+
+
+
+document
+.getElementById("shuffle")
+.classList
+
+  // =========================
+// ANA SAYFAYA DÖN
+// =========================
+
+
+
+function goHome(){
+
+
+searchInput.value="";
+
+
+
+searchResults.style.display="none";
+
+
+
+document
+.getElementById("heroSection")
+.style.display="flex";
+
+
+
+document
+.getElementById("songsSection")
+.style.display="block";
+
+
+
+document
+.getElementById("statsSection")
+.style.display="block";
+
+
+
+document
+.getElementById("recentSection")
+.style.display="block";
+
+
+
+document
+.getElementById("topSection")
+.style.display="block";
+
+
+
+renderSongs();
+
+renderRecent();
+
+renderTop();
+
+
+}
+
+
+
+
+
+document
+.getElementById("homeLogo")
+.onclick=goHome;
+
+
+
+document
+.getElementById("homeBtn")
+.onclick=goHome;
+
+
+
+
+
+
+
+// =========================
+// PLAYER AÇ KAPA
+// =========================
+
+
+
+const closePlayer =
+document.getElementById("closePlayer");
+
+
+
+const openPlayer =
+document.getElementById("openPlayer");
+
+
+
+
+closePlayer.onclick=()=>{
+
+
+player.classList.add("closed");
+
+
+
+openPlayer.classList.add("show");
+
+
+};
+
+
+
+
+
+openPlayer.onclick=()=>{
+
+
+player.classList.remove("closed");
+
+
+
+openPlayer.classList.remove("show");
+
+
+};
+
+
+
+
+
+
+
+
+
+// =========================
+// AYARLAR
+// =========================
+
+
+
+const settingsPanel =
+document.getElementById("settingsPanel");
+
+
+
+document
+.getElementById("settingsBtn")
+.onclick=()=>{
+
+
+settingsPanel.classList.add("show");
+
+
+};
+
+
+
+
+
+document
+.getElementById("closeSettings")
+.onclick=()=>{
+
+
+settingsPanel.classList.remove("show");
+
+
+};
+
+
+
+
+
+
+
+// =========================
+// DARK LIGHT
+// =========================
+
+
+
+const darkMode =
+document.getElementById("darkMode");
+
+
+
+darkMode.onchange=()=>{
+
+
+if(darkMode.checked){
+
+
+document.body.classList.remove("light");
+
+
+localStorage.setItem(
+"theme",
+"dark"
+);
+
+
+
+}
+
+else{
+
+
+document.body.classList.add("light");
+
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+
+}
+
+
+
+};
+
+
+
+
+
+
+
+document
+.getElementById("lightMode")
+.onclick=()=>{
+
+
+darkMode.checked=false;
+
+
+document.body.classList.add("light");
+
+
+localStorage.setItem(
+"theme",
+"light"
+);
+
+
+};
+
+
+
+
+
+
+
+
+let savedTheme =
+localStorage.getItem("theme");
+
+
+
+if(savedTheme==="light"){
+
+
+document.body.classList.add("light");
+
+
+darkMode.checked=false;
+
+
+}
+
+
+
+
+
+
+
+
+// =========================
+// İSTATİSTİKLER
+// =========================
+
+
+
+function updateStats(){
+
+
+document
+.getElementById("totalSongs")
+.textContent =
+stats.total;
+
+
+
+document
+.getElementById("totalTime")
+.textContent =
+Math.floor(
+stats.time/60
+);
+
+
+
+let best =
+[...songs]
+.sort(
+(a,b)=>
+b.plays-a.plays
+)[0];
+
+
+
+if(best){
+
+
+document
+.getElementById("mostPlayed")
+.textContent =
+best.name;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+// =========================
 // BAŞLANGIÇ
 // =========================
 
@@ -1258,18 +1219,18 @@ return min+":"+sec;
 renderSongs();
 
 
-renderTop();
-
-
 renderRecent();
 
 
+renderTop();
 
-loadSong(0);
+
+updateStats();
+
 
 
 
 
 console.log(
-"MusicWave aktif"
+"MusicWave hazır"
 );
