@@ -1147,17 +1147,27 @@ document
 
 
 
-closePlayer.onclick=()=>{
+// PLAYER AÇ KAPA
+
+closePlayer.onclick = ()=>{
+
+    player.classList.add("closed");
+
+    closePlayer.style.display="none";
+
+    openPlayer.style.display="block";
+
+};
 
 
 
-player.classList.add("closed");
+openPlayer.onclick = ()=>{
 
+    player.classList.remove("closed");
 
+    openPlayer.style.display="none";
 
-openPlayer.classList.add("show");
-
-
+    closePlayer.style.display="block";
 
 };
 
