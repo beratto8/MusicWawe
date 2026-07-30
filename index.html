@@ -1,87 +1,131 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MusicWave</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>MusicWave</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
 <div class="background-animation">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
 </div>
 
 <header>
 
-    <div class="logo">
-        🎵 MusicWave
-    </div>
+<div class="logo">
 
-    <div class="search-box">
+🎵 MusicWave
 
-        <input
-        type="text"
-        id="searchInput"
-        placeholder="Şarkı ara...">
+</div>
 
-        <button id="searchBtn">
-            Ara
-        </button>
+<div class="search-box">
 
-    </div>
+<input
+type="text"
+id="searchInput"
+placeholder="Şarkı veya sanatçı ara...">
 
-    <div class="profile">
+<button id="searchBtn">
 
-        <img
-        src="https://via.placeholder.com/50"
-        alt="profil">
+<i class="fa-solid fa-magnifying-glass"></i>
 
-    </div>
+</button>
+
+</div>
+
+<div class="profile">
+
+<img
+id="profileImage"
+src="https://via.placeholder.com/60"
+alt="Profil">
+
+</div>
 
 </header>
 
 <aside class="sidebar">
 
-    <ul>
+<ul>
 
-        <li class="active">
-            Ana Sayfa
-        </li>
+<li class="active">
 
-        <li>
-            Trendler
-        </li>
+<i class="fa-solid fa-house"></i>
 
-        <li>
-            Favoriler
-        </li>
+Ana Sayfa
 
-        <li>
-            Albümler
-        </li>
+</li>
 
-        <li>
-            Sanatçılar
-        </li>
+<li>
 
-        <li>
-            Ayarlar
-        </li>
+<i class="fa-solid fa-fire"></i>
 
-    </ul>
+Trendler
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-heart"></i>
+
+Favoriler
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-compact-disc"></i>
+
+Albümler
+
+</li>
+
+<li>
+
+<i class="fa-solid fa-microphone"></i>
+
+Sanatçılar
+
+</li>
+
+<li id="settingsBtn">
+
+<i class="fa-solid fa-gear"></i>
+
+Ayarlar
+
+</li>
+
+</ul>
 
 </aside>
 
@@ -98,8 +142,8 @@ Müziğin Yeni Dünyasına Hoş Geldin
 <p>
 
 Favori şarkılarını ara,
-çal,
-keşfet.
+keşfet,
+dinle.
 
 </p>
 
@@ -113,119 +157,24 @@ Trend Şarkılar
 
 </h2>
 
-<div class="song-grid">
+<div
+class="song-grid"
+id="songGrid">
 
-<div class="song-card">
-
-<img
-src="https://picsum.photos/300/300?1">
-
-<h3>Believer</h3>
-
-<p>Imagine Dragons</p>
-
-<button class="play-btn">
-
-▶ Dinle
-
-</button>
-
-</div>
-
-<div class="song-card">
-
-<img
-src="https://picsum.photos/300/300?2">
-
-<h3>Shape Of You</h3>
-
-<p>Ed Sheeran</p>
-
-<button class="play-btn">
-
-▶ Dinle
-
-</button>
-
-</div>
-
-<div class="song-card">
-
-<img
-src="https://picsum.photos/300/300?3">
-
-<h3>Blinding Lights</h3>
-
-<p>The Weeknd</p>
-
-<button class="play-btn">
-
-▶ Dinle
-
-</button>
-
-</div>
-
-<div class="song-card">
-
-<img
-src="https://picsum.photos/300/300?4">
-
-<h3>Lovely</h3>
-
-<p>Billie Eilish</p>
-
-<button class="play-btn">
-
-▶ Dinle
-
-</button>
-
-</div>
-
-<div class="song-card">
-
-<img
-src="https://picsum.photos/300/300?5">
-
-<h3>Faded</h3>
-
-<p>Alan Walker</p>
-
-<button class="play-btn">
-
-▶ Dinle
-
-</button>
-
-</div>
-
-<div class="song-card">
-
-<img
-src="https://picsum.photos/300/300?6">
-
-<h3>Animals</h3>
-
-<p>Maroon 5</p>
-
-<button class="play-btn">
-
-▶ Dinle
-
-</button>
-
-</div>
+<!--
+Kartlar
+JavaScript tarafından oluşturulacak.
+-->
 
 </div>
 
 </section>
 
-<section class="playlist">
+<section class="top10">
 
 <h2>
 
-Çalma Listesi
+En Çok Dinlenenler
 
 </h2>
 
@@ -245,7 +194,7 @@ src="https://picsum.photos/300/300?6">
 
 <span>02</span>
 
-<p>Faded</p>
+<p>Shape Of You</p>
 
 <button>▶</button>
 
@@ -255,7 +204,7 @@ src="https://picsum.photos/300/300?6">
 
 <span>03</span>
 
-<p>Lovely</p>
+<p>Blinding Lights</p>
 
 <button>▶</button>
 
@@ -265,7 +214,7 @@ src="https://picsum.photos/300/300?6">
 
 <span>04</span>
 
-<p>Animals</p>
+<p>Lovely</p>
 
 <button>▶</button>
 
@@ -275,9 +224,75 @@ src="https://picsum.photos/300/300?6">
 
 <span>05</span>
 
-<p>Shape Of You</p>
+<p>Faded</p>
 
 <button>▶</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>06</span>
+
+<p>Animals</p>
+
+<button>▶</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>07</span>
+
+<p>Yakında...</p>
+
+<button disabled>
+
+-
+
+</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>08</span>
+
+<p>Yakında...</p>
+
+<button disabled>
+
+-
+
+</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>09</span>
+
+<p>Yakında...</p>
+
+<button disabled>
+
+-
+
+</button>
+
+</div>
+
+<div class="playlist-item">
+
+<span>10</span>
+
+<p>Yakında...</p>
+
+<button disabled>
+
+-
+
+</button>
 
 </div>
 
@@ -285,14 +300,30 @@ src="https://picsum.photos/300/300?6">
 
 </section>
 
-</main>
+    <!-- MUSIC PLAYER -->
 
-<footer class="player">
+<div class="mini-player" id="miniPlayer">
 
-<div class="left-player">
+<button id="openPlayer">
+
+▲
+
+</button>
+
+</div>
+
+
+<footer class="player" id="player">
+
+
+<div class="player-left">
+
 
 <img
-src="https://picsum.photos/100/100?7">
+id="playerImage"
+src="images/believer.jpg"
+alt="Albüm">
+
 
 <div>
 
@@ -302,17 +333,30 @@ src="https://picsum.photos/100/100?7">
 
 </h3>
 
+
 <p id="artistName">
 
 Sanatçı
 
 </p>
 
-</div>
 
 </div>
 
-<div class="center-player">
+
+</div>
+
+
+
+<div class="player-center">
+
+
+<button id="shuffle">
+
+🔀
+
+</button>
+
 
 <button id="prev">
 
@@ -320,11 +364,13 @@ Sanatçı
 
 </button>
 
+
 <button id="play">
 
 ▶
 
 </button>
+
 
 <button id="pause">
 
@@ -332,33 +378,406 @@ Sanatçı
 
 </button>
 
+
 <button id="next">
 
 ⏭
 
 </button>
 
+
+<button id="repeat">
+
+🔁
+
+</button>
+
+
 </div>
 
-<div class="right-player">
+
+
+
+<div class="player-right">
+
+
+<div class="time">
+
+<span id="currentTime">
+
+0:00
+
+</span>
+
+
+/
+
+
+<span id="duration">
+
+0:00
+
+</span>
+
+
+</div>
+
+
 
 <input
+
 type="range"
+
 id="progress"
-value="0">
+
+value="0"
+
+min="0"
+
+max="100">
+
+
 
 <input
+
 type="range"
+
 id="volume"
-value="100">
+
+value="100"
+
+min="0"
+
+max="100">
+
+
 
 </div>
 
-<audio id="audioPlayer"></audio>
+
+
+
+<button id="closePlayer">
+
+▼
+
+</button>
+
 
 </footer>
 
+
+
+
+
+<!-- LYRICS PANEL -->
+
+
+<div class="lyrics-panel" id="lyricsPanel">
+
+
+<div class="lyrics-header">
+
+
+<h2>
+
+🎤 Şarkı Sözleri
+
+</h2>
+
+
+<button id="closeLyrics">
+
+✕
+
+</button>
+
+
+</div>
+
+
+<p id="lyricsText">
+
+Şarkı sözleri burada görünecek.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<!-- SETTINGS -->
+
+
+<div class="settings-panel" id="settingsPanel">
+
+
+<div class="settings-header">
+
+
+<h2>
+
+⚙ Ayarlar
+
+</h2>
+
+
+<button id="closeSettings">
+
+✕
+
+</button>
+
+
+</div>
+
+
+
+<div class="setting-item">
+
+
+<span>
+
+🌙 Karanlık Mod
+
+</span>
+
+
+<label class="switch">
+
+
+<input
+
+type="checkbox"
+
+id="darkMode"
+
+checked>
+
+
+<span class="slider">
+
+</span>
+
+
+</label>
+
+
+</div>
+
+
+
+
+<div class="setting-item">
+
+
+<span>
+
+☀️ Aydınlık Mod
+
+</span>
+
+
+<button id="lightMode">
+
+Aç
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="setting-item">
+
+
+<span>
+
+🎨 Tema
+
+</span>
+
+
+<select id="themeSelect">
+
+
+<option>
+
+Cyan
+
+</option>
+
+
+<option>
+
+Mor
+
+</option>
+
+
+<option>
+
+Yeşil
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+    </div>
+
+    <!-- PROFILE PANEL -->
+
+<div class="profile-panel" id="profilePanel">
+
+<div class="profile-header">
+
+<h2>
+
+👤 Profil
+
+</h2>
+
+<button id="closeProfile">
+
+✕
+
+</button>
+
+</div>
+
+
+<div class="profile-content">
+
+<img
+src="https://via.placeholder.com/100"
+id="userAvatar"
+alt="Profil">
+
+
+<h3 id="username">
+
+Misafir
+
+</h3>
+
+
+<button id="loginBtn">
+
+Giriş Yap
+
+</button>
+
+
+<button id="registerBtn">
+
+Kayıt Ol
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- MOBILE NAVIGATION -->
+
+<nav class="mobile-nav">
+
+
+<button>
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+
+Ana Sayfa
+
+</span>
+
+</button>
+
+
+
+<button>
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<span>
+
+Ara
+
+</span>
+
+</button>
+
+
+
+<button>
+
+<i class="fa-solid fa-heart"></i>
+
+<span>
+
+Favori
+
+</span>
+
+</button>
+
+
+
+<button id="mobileProfile">
+
+<i class="fa-solid fa-user"></i>
+
+<span>
+
+Profil
+
+</span>
+
+</button>
+
+
+</nav>
+
+
+
+
+
+<!-- AUDIO -->
+
+
+<audio id="audioPlayer">
+
+</audio>
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+
 <script src="script.js"></script>
 
+
 </body>
-  </html>
+
+
+</html>
