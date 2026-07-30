@@ -1,5 +1,5 @@
 /* =========================
-   MUSICWAVE V3 STYLE
+   MUSICWAVE V4 CSS
    PART 1
 ========================= */
 
@@ -34,14 +34,14 @@ color:white;
 
 overflow-x:hidden;
 
-transition:.4s;
-
 }
 
 
 
 
+
 /* SCROLL */
+
 
 ::-webkit-scrollbar{
 
@@ -70,24 +70,34 @@ background:#111;
 
 
 
-/* =========================
-BACKGROUND
-========================= */
+
+
+/* BACKGROUND */
 
 
 .background-animation{
 
 position:fixed;
 
-inset:0;
+top:0;
 
-z-index:-2;
+left:0;
+
+width:100%;
+
+height:100%;
+
+z-index:-1;
 
 overflow:hidden;
 
 background:
 
-radial-gradient(circle at top,#143d22,#050505 50%);
+linear-gradient(
+135deg,
+#020202,
+#101010
+);
 
 }
 
@@ -97,21 +107,21 @@ radial-gradient(circle at top,#143d22,#050505 50%);
 
 position:absolute;
 
-width:120px;
+width:35px;
 
-height:120px;
+height:35px;
 
-background:
-
-rgba(30,215,96,.15);
+background:#1ed76055;
 
 border-radius:50%;
 
-filter:blur(5px);
+box-shadow:
+
+0 0 25px #1ed760;
 
 animation:
 
-move 18s infinite linear;
+float 18s infinite linear;
 
 }
 
@@ -131,7 +141,7 @@ animation-delay:0s;
 
 left:30%;
 
-animation-delay:3s;
+animation-delay:4s;
 
 }
 
@@ -141,7 +151,7 @@ animation-delay:3s;
 
 left:50%;
 
-animation-delay:6s;
+animation-delay:8s;
 
 }
 
@@ -151,7 +161,7 @@ animation-delay:6s;
 
 left:70%;
 
-animation-delay:9s;
+animation-delay:12s;
 
 }
 
@@ -161,37 +171,27 @@ animation-delay:9s;
 
 left:90%;
 
-animation-delay:12s;
+animation-delay:16s;
 
 }
 
 
 
 
-@keyframes move{
+@keyframes float{
 
 
 0%{
 
-transform:translateY(100vh) scale(.5);
-
-opacity:0;
+transform:translateY(100vh);
 
 }
 
-
-50%{
-
-opacity:1;
-
-}
 
 
 100%{
 
-transform:translateY(-120vh) scale(1.5);
-
-opacity:0;
+transform:translateY(-120vh);
 
 }
 
@@ -203,9 +203,8 @@ opacity:0;
 
 
 
-/* =========================
-HEADER
-========================= */
+
+/* HEADER */
 
 
 header{
@@ -226,11 +225,11 @@ align-items:center;
 
 justify-content:space-between;
 
-padding:0 35px;
+padding:0 40px;
 
 background:
 
-rgba(0,0,0,.75);
+rgba(10,10,10,.85);
 
 backdrop-filter:blur(20px);
 
@@ -238,7 +237,7 @@ z-index:1000;
 
 border-bottom:
 
-1px solid rgba(255,255,255,.08);
+1px solid #222;
 
 }
 
@@ -260,23 +259,10 @@ text-shadow:
 
 0 0 20px #1ed760;
 
-transition:.3s;
-
 }
 
 
 
-.logo:hover{
-
-transform:scale(1.08);
-
-}
-
-
-
-
-
-/* SEARCH */
 
 
 .search-box{
@@ -291,15 +277,15 @@ gap:10px;
 
 .search-box input{
 
-width:420px;
+width:380px;
 
 height:45px;
-
-border-radius:30px;
 
 border:none;
 
 outline:none;
+
+border-radius:30px;
 
 background:#181818;
 
@@ -313,6 +299,7 @@ font-size:16px;
 
 
 
+
 .search-box button{
 
 width:50px;
@@ -321,15 +308,14 @@ height:45px;
 
 border:none;
 
-border-radius:50%;
+border-radius:30px;
 
 background:#1ed760;
 
 cursor:pointer;
 
-font-size:18px;
-
 }
+
 
 
 
@@ -349,11 +335,9 @@ cursor:pointer;
 
 }
 
-
-
-
-
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 
 
 .sidebar{
@@ -366,11 +350,15 @@ left:0;
 
 width:240px;
 
-height:100%;
+height:calc(100vh - 80px);
 
-background:#090909;
+background:#0d0d0d;
 
 padding:30px 20px;
+
+border-right:
+
+1px solid #222;
 
 }
 
@@ -386,19 +374,19 @@ list-style:none;
 
 .sidebar li{
 
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
 padding:15px;
 
-margin-bottom:12px;
+margin-bottom:10px;
 
 border-radius:15px;
 
 cursor:pointer;
-
-display:flex;
-
-gap:12px;
-
-align-items:center;
 
 transition:.3s;
 
@@ -411,15 +399,20 @@ transition:.3s;
 
 background:#1ed760;
 
-color:black;
+color:#000;
 
 transform:translateX(8px);
 
 }
 
+
+
+
+
+
+
 /* =========================
-   MAIN CONTENT
-   PART 2
+MAIN
 ========================= */
 
 
@@ -435,14 +428,15 @@ padding:
 
 
 
-/* =========================
-   HERO
-========================= */
+
+
+
+/* HERO */
 
 
 .hero{
 
-height:330px;
+height:320px;
 
 border-radius:30px;
 
@@ -459,23 +453,15 @@ background:
 linear-gradient(
 135deg,
 #1ed760,
-#0b5e2a,
+#00aa55,
 #111
 );
 
-background-size:300% 300%;
+background-size:200%;
 
 animation:
 
 heroMove 8s infinite;
-
-box-shadow:
-
-0 0 50px rgba(30,215,96,.25);
-
-overflow:hidden;
-
-position:relative;
 
 }
 
@@ -483,11 +469,13 @@ position:relative;
 
 @keyframes heroMove{
 
+
 0%{
 
 background-position:0%;
 
 }
+
 
 50%{
 
@@ -495,20 +483,23 @@ background-position:100%;
 
 }
 
+
 100%{
 
 background-position:0%;
 
 }
 
+
 }
+
 
 
 
 
 .hero h1{
 
-font-size:52px;
+font-size:50px;
 
 font-weight:800;
 
@@ -518,20 +509,15 @@ font-weight:800;
 
 .hero p{
 
-font-size:20px;
-
 margin-top:15px;
 
-color:#ddd;
+font-size:20px;
 
 }
 
 
 
 
-/* =========================
-SECTION
-========================= */
 
 
 section{
@@ -554,9 +540,10 @@ margin-bottom:25px;
 
 
 
-/* =========================
-SONG GRID
-========================= */
+
+
+
+/* SONG GRID */
 
 
 .song-grid{
@@ -578,28 +565,23 @@ gap:25px;
 
 
 
-/* =========================
-SONG CARD
-========================= */
+
+/* SONG CARD */
 
 
 .song-card{
 
 background:#111;
 
-border-radius:25px;
-
 padding:18px;
+
+border-radius:25px;
 
 border:
 
-1px solid rgba(255,255,255,.06);
+1px solid #222;
 
-transition:.4s;
-
-position:relative;
-
-overflow:hidden;
+transition:.3s;
 
 }
 
@@ -607,13 +589,11 @@ overflow:hidden;
 
 .song-card:hover{
 
-transform:
-
-translateY(-10px);
+transform:translateY(-10px);
 
 box-shadow:
 
-0 0 35px rgba(30,215,96,.5);
+0 0 25px #1ed760;
 
 }
 
@@ -624,7 +604,7 @@ box-shadow:
 
 width:100%;
 
-height:230px;
+height:220px;
 
 object-fit:cover;
 
@@ -634,12 +614,11 @@ border-radius:20px;
 
 
 
-
 .song-card h3{
 
-font-size:22px;
-
 margin-top:15px;
+
+font-size:21px;
 
 }
 
@@ -649,11 +628,10 @@ margin-top:15px;
 
 color:#aaa;
 
-margin:5px 0 15px;
-
-font-size:14px;
+margin:8px 0;
 
 }
+
 
 
 
@@ -670,13 +648,9 @@ border-radius:30px;
 
 background:#1ed760;
 
-color:black;
-
 font-weight:700;
 
 cursor:pointer;
-
-transition:.3s;
 
 }
 
@@ -686,19 +660,15 @@ transition:.3s;
 
 transform:scale(1.05);
 
-box-shadow:
-
-0 0 25px #1ed760;
-
 }
 
 
 
 
 
-/* =========================
-SEARCH RESULTS
-========================= */
+
+
+/* SEARCH RESULT */
 
 
 #searchResults{
@@ -709,43 +679,19 @@ display:none;
 
 
 
-.search-title{
-
-font-size:35px;
-
-margin-bottom:30px;
-
-}
-
-
-
 .no-results{
 
-text-align:center;
+margin-top:30px;
 
-font-size:22px;
+font-size:20px;
 
 color:#aaa;
 
-padding:50px;
-
 }
-
-
-
-
 
 /* =========================
-TOP 10
+   TOP 10
 ========================= */
-
-
-.top10{
-
-margin-top:60px;
-
-}
-
 
 
 .playlist-list{
@@ -760,15 +706,13 @@ gap:15px;
 
 
 
-
-
 .playlist-item{
 
 display:grid;
 
 grid-template-columns:
 
-60px 1fr 70px;
+70px 1fr 60px;
 
 align-items:center;
 
@@ -786,13 +730,11 @@ transition:.3s;
 
 .playlist-item:hover{
 
-background:#1b1b1b;
+background:#181818;
 
 transform:translateX(10px);
 
 }
-
-
 
 
 
@@ -830,56 +772,16 @@ background:#1ed760;
 
 cursor:pointer;
 
-font-size:18px;
-
 }
 
 
-
-
-
-.playlist-item button:hover{
-
-transform:scale(1.15);
-
-box-shadow:
-
-0 0 20px #1ed760;
-
-}
 
 
 
 
 
 /* =========================
-RECENT SONGS
-========================= */
-
-
-.recent-section{
-
-margin-top:60px;
-
-}
-
-
-
-.recent-grid{
-
-display:grid;
-
-grid-template-columns:
-
-repeat(3,1fr);
-
-gap:20px;
-
-  }
-
-/* =========================
-   MUSIC PLAYER
-   PART 3
+ MUSIC PLAYER
 ========================= */
 
 
@@ -887,9 +789,9 @@ gap:20px;
 
 position:fixed;
 
-left:0;
-
 bottom:0;
+
+left:0;
 
 width:100%;
 
@@ -899,7 +801,7 @@ background:
 
 rgba(10,10,10,.95);
 
-backdrop-filter:blur(25px);
+backdrop-filter:blur(20px);
 
 display:none;
 
@@ -913,62 +815,31 @@ z-index:3000;
 
 border-top:
 
-1px solid rgba(30,215,96,.25);
-
-transition:.5s;
-
-animation:
-
-playerShow .4s ease;
+1px solid #222;
 
 }
 
 
 
-@keyframes playerShow{
-
-from{
-
-transform:translateY(100%);
-
-}
-
-to{
-
-transform:translateY(0);
-
-}
-
-}
-
-
-
-
-/* PANEL KAPALI */
 
 
 .player.closed{
 
-transform:
-
-translateY(70px);
+transform:translateY(70px);
 
 }
 
 
 
-
-
-/* GERİ AÇMA BUTONU */
 
 
 #openPlayer{
 
 position:fixed;
 
-bottom:20px;
-
 right:25px;
+
+bottom:20px;
 
 width:50px;
 
@@ -980,35 +851,17 @@ border-radius:50%;
 
 background:#1ed760;
 
-font-size:22px;
+display:none;
 
 cursor:pointer;
 
 z-index:4000;
 
-display:none;
-
-box-shadow:
-
-0 0 25px #1ed760;
-
 }
 
 
 
 
-
-#openPlayer:hover{
-
-transform:scale(1.1);
-
-}
-
-
-
-
-
-/* SOL */
 
 
 .player-left{
@@ -1049,15 +902,12 @@ font-size:18px;
 
 color:#aaa;
 
-font-size:14px;
-
 }
 
 
 
 
 
-/* ORTA */
 
 
 .player-center{
@@ -1065,8 +915,6 @@ font-size:14px;
 display:flex;
 
 gap:12px;
-
-align-items:center;
 
 }
 
@@ -1086,11 +934,9 @@ background:#222;
 
 color:white;
 
-font-size:18px;
-
 cursor:pointer;
 
-transition:.3s;
+font-size:18px;
 
 }
 
@@ -1104,11 +950,6 @@ color:black;
 
 }
 
-
-
-
-
-/* AKTİF DURUM */
 
 
 .player-center button.active{
@@ -1127,9 +968,6 @@ box-shadow:
 
 
 
-/* SAĞ */
-
-
 .player-right{
 
 display:flex;
@@ -1142,44 +980,21 @@ gap:15px;
 
 
 
-.time{
-
-font-size:13px;
-
-color:#bbb;
-
-}
-
-
-
 #progress{
 
-width:260px;
+width:250px;
 
 accent-color:#1ed760;
 
-cursor:pointer;
-
 }
 
-
-
-#volume{
-
-width:100px;
-
-accent-color:#1ed760;
-
-cursor:pointer;
-
-}
 
 
 
 
 
 /* =========================
- LYRICS
+ LYRICS PANEL
 ========================= */
 
 
@@ -1195,7 +1010,7 @@ width:400px;
 
 height:100%;
 
-background:#101010;
+background:#111;
 
 padding:30px;
 
@@ -1215,13 +1030,12 @@ right:0;
 
 
 
+
 .lyrics-header{
 
 display:flex;
 
 justify-content:space-between;
-
-align-items:center;
 
 }
 
@@ -1233,9 +1047,9 @@ width:35px;
 
 height:35px;
 
-border-radius:50%;
-
 border:none;
+
+border-radius:50%;
 
 background:#222;
 
@@ -1244,10 +1058,6 @@ color:white;
 cursor:pointer;
 
 }
-
-
-
-
 
 /* =========================
  SETTINGS
@@ -1258,9 +1068,9 @@ cursor:pointer;
 
 position:fixed;
 
-right:-400px;
-
 top:100px;
+
+right:-400px;
 
 width:350px;
 
@@ -1272,19 +1082,48 @@ border-radius:25px;
 
 z-index:3500;
 
-transition:.5s;
+transition:.4s;
 
 }
 
 
 
-.settings-panel.active,
 .settings-panel.show{
 
 right:30px;
 
 }
 
+
+
+
+.settings-header{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:25px;
+
+}
+
+
+
+.settings-header button{
+
+width:35px;
+
+height:35px;
+
+border:none;
+
+border-radius:50%;
+
+background:#222;
+
+color:white;
+
+}
 
 
 
@@ -1296,9 +1135,9 @@ justify-content:space-between;
 
 align-items:center;
 
-padding:15px;
+background:#181818;
 
-background:#1a1a1a;
+padding:15px;
 
 border-radius:15px;
 
@@ -1319,8 +1158,6 @@ padding:8px 15px;
 
 border-radius:20px;
 
-cursor:pointer;
-
 }
 
 
@@ -1332,11 +1169,11 @@ cursor:pointer;
 
 .switch{
 
+position:relative;
+
 width:50px;
 
 height:25px;
-
-position:relative;
 
 }
 
@@ -1374,13 +1211,13 @@ width:20px;
 
 height:20px;
 
-left:3px;
-
-top:3px;
-
 background:white;
 
 border-radius:50%;
+
+left:3px;
+
+top:2px;
 
 transition:.3s;
 
@@ -1402,9 +1239,13 @@ transform:translateX(25px);
 
 }
 
+
+
+
+
+
 /* =========================
-   PROFILE PANEL
-   PART 4
+ PROFILE
 ========================= */
 
 
@@ -1412,25 +1253,21 @@ transform:translateX(25px);
 
 position:fixed;
 
-right:-380px;
+right:-350px;
 
-top:100px;
+top:90px;
 
-width:330px;
+width:320px;
 
 background:#111;
 
-border-radius:25px;
-
 padding:25px;
 
-z-index:4000;
+border-radius:25px;
 
-transition:.5s;
+z-index:3500;
 
-box-shadow:
-
-0 0 30px rgba(30,215,96,.3);
+transition:.4s;
 
 }
 
@@ -1450,30 +1287,7 @@ display:flex;
 
 justify-content:space-between;
 
-align-items:center;
-
 }
-
-
-
-.profile-header button{
-
-width:35px;
-
-height:35px;
-
-border:none;
-
-border-radius:50%;
-
-background:#222;
-
-color:white;
-
-cursor:pointer;
-
-}
-
 
 
 
@@ -1495,8 +1309,6 @@ border-radius:50%;
 
 border:3px solid #1ed760;
 
-margin:20px;
-
 }
 
 
@@ -1505,19 +1317,15 @@ margin:20px;
 
 width:100%;
 
-height:45px;
+padding:12px;
+
+margin-top:15px;
 
 border:none;
 
 border-radius:30px;
 
-margin-top:10px;
-
 background:#1ed760;
-
-font-weight:bold;
-
-cursor:pointer;
 
 }
 
@@ -1525,8 +1333,9 @@ cursor:pointer;
 
 
 
+
 /* =========================
-LIGHT MODE
+ LIGHT MODE
 ========================= */
 
 
@@ -1540,18 +1349,10 @@ color:#111;
 
 
 
-body.light header{
-
-background:white;
-
-}
-
-
-
-body.light .sidebar,
 body.light .song-card,
 body.light .playlist-item,
 body.light .player,
+body.light .sidebar,
 body.light .settings-panel,
 body.light .profile-panel{
 
@@ -1563,10 +1364,11 @@ color:#111;
 
 
 
-body.light .song-card p,
-body.light .player-left p{
+body.light input{
 
-color:#555;
+background:#ddd;
+
+color:#111;
 
 }
 
@@ -1575,7 +1377,7 @@ color:#555;
 
 
 /* =========================
-MOBILE NAV
+ MOBILE NAV
 ========================= */
 
 
@@ -1590,7 +1392,7 @@ display:none;
 
 
 /* =========================
-RESPONSIVE PC TABLET
+ MOBILE
 ========================= */
 
 
@@ -1609,17 +1411,7 @@ main{
 
 margin-left:0;
 
-padding:
-
-100px 20px 160px;
-
-}
-
-
-
-.search-box input{
-
-width:250px;
+padding:100px 20px 150px;
 
 }
 
@@ -1627,7 +1419,15 @@ width:250px;
 
 .hero h1{
 
-font-size:38px;
+font-size:35px;
+
+}
+
+
+
+.search-box input{
+
+width:220px;
 
 }
 
@@ -1637,46 +1437,19 @@ font-size:38px;
 
 height:auto;
 
-min-height:120px;
-
 flex-direction:column;
 
 gap:15px;
 
-padding:20px;
+padding:15px;
 
 }
 
 
 
-.player-left{
-
-width:100%;
-
-justify-content:center;
-
 }
 
 
-
-.player-right{
-
-width:100%;
-
-justify-content:center;
-
-}
-
-
-}
-
-
-
-
-
-/* =========================
-PHONE
-========================= */
 
 
 @media(max-width:700px){
@@ -1691,15 +1464,13 @@ padding:15px;
 
 flex-wrap:wrap;
 
-gap:15px;
-
 }
 
 
 
 .logo{
 
-font-size:24px;
+font-size:22px;
 
 }
 
@@ -1721,11 +1492,9 @@ width:100%;
 
 
 
-.profile img{
+.song-grid{
 
-width:45px;
-
-height:45px;
+grid-template-columns:1fr;
 
 }
 
@@ -1733,9 +1502,9 @@ height:45px;
 
 .hero{
 
-height:280px;
+height:260px;
 
-padding:30px;
+padding:25px;
 
 }
 
@@ -1749,39 +1518,6 @@ font-size:30px;
 
 
 
-.hero p{
-
-font-size:16px;
-
-}
-
-
-
-
-
-.song-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-
-
-.playlist-item{
-
-grid-template-columns:
-
-40px 1fr 50px;
-
-padding:15px;
-
-}
-
-
-
-
 
 .player{
 
@@ -1791,37 +1527,9 @@ bottom:65px;
 
 
 
-.player-center button{
-
-width:38px;
-
-height:38px;
-
-font-size:15px;
-
-}
-
-
-
-#progress{
-
-width:170px;
-
-}
-
-
-
-#volume{
-
-display:none;
-
-}
-
-
-
-
-
 .mobile-nav{
+
+display:flex;
 
 position:fixed;
 
@@ -1835,13 +1543,11 @@ height:65px;
 
 background:#111;
 
-display:flex;
+z-index:4000;
 
 justify-content:space-around;
 
 align-items:center;
-
-z-index:5000;
 
 }
 
@@ -1860,8 +1566,6 @@ display:flex;
 flex-direction:column;
 
 gap:5px;
-
-font-size:12px;
 
 }
 
@@ -1891,94 +1595,5 @@ right:5%;
 
 }
 
-
-
-.profile-panel{
-
-width:90%;
-
-right:-100%;
-
-}
-
-
-
-.profile-panel.active{
-
-right:5%;
-
-}
-
-
-
-.lyrics-panel{
-
-width:100%;
-
-}
-
-
-
-}
-
-
-
-
-
-/* =========================
-ANIMATIONS
-========================= */
-
-
-.song-card{
-
-animation:
-
-cardFloat 5s infinite;
-
-}
-
-
-
-@keyframes cardFloat{
-
-
-0%{
-
-transform:translateY(0);
-
-}
-
-
-50%{
-
-transform:translateY(-6px);
-
-}
-
-
-100%{
-
-transform:translateY(0);
-
-}
-
-
-}
-
-
-
-
-button{
-
-transition:.3s;
-
-}
-
-
-
-button:active{
-
-transform:scale(.95);
 
 }
