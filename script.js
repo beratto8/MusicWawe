@@ -2221,3 +2221,14 @@ addHistory(currentSong);
 
 });
 
+
+
+// TEST - TREND ŞARKILARI ZORLA YÜKLE
+
+window.onload = function(){
+
+    console.log("Sayfa açıldı");
+
+    renderSongs();
+
+};
