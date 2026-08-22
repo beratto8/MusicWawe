@@ -8,12 +8,10 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color"
-          content="#050505">
+    <meta name="theme-color" content="#05050b">
 
     <title>MusicWave</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
@@ -24,35 +22,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <!-- CSS -->
     <link rel="stylesheet"
           href="style.css">
 
 </head>
 
-
 <body>
 
 
 <!-- =====================================================
-     ARKA PLAN
+     BACKGROUND
 ===================================================== -->
 
-<div class="background-animation">
+<div class="background">
 
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-    <div class="bg-orb orb-3"></div>
+    <div class="gradient-orb orb1"></div>
+    <div class="gradient-orb orb2"></div>
+    <div class="gradient-orb orb3"></div>
 
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="stars"></div>
 
 </div>
 
@@ -61,45 +52,41 @@
      HEADER
 ===================================================== -->
 
-<header id="mainHeader">
+<header>
 
     <div class="logo"
          id="homeLogo">
 
-        <span class="logo-icon">🎵</span>
-        <span>MusicWave</span>
+        <span>🎵</span>
+
+        MusicWave
 
     </div>
 
 
     <div class="search-box">
 
+        <i class="fa-solid fa-magnifying-glass"></i>
+
         <input
             id="searchInput"
             type="text"
-            autocomplete="off"
             placeholder="Şarkı veya sanatçı ara..."
         >
 
-        <button
-            id="searchBtn"
-            type="button"
-            aria-label="Ara">
+        <button id="searchBtn">
 
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-arrow-right"></i>
 
         </button>
 
     </div>
 
 
-    <button
-        class="mobile-menu-btn"
-        id="mobileMenuBtn"
-        type="button"
-        aria-label="Menüyü aç">
+    <button class="header-settings"
+            id="settingsBtn">
 
-        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-gear"></i>
 
     </button>
 
@@ -110,84 +97,83 @@
      SIDEBAR
 ===================================================== -->
 
-<aside class="sidebar"
-       id="sidebar">
+<aside class="sidebar">
 
-    <div class="sidebar-title">
+    <div class="side-title">
 
         <span>MENÜ</span>
 
     </div>
 
 
-    <ul>
+    <nav>
 
-        <li id="homeBtn"
-            class="active">
+        <button class="side-item active"
+                id="homeBtn">
 
             <i class="fa-solid fa-house"></i>
 
             <span>Ana Sayfa</span>
 
-        </li>
+        </button>
 
 
-        <li id="trendBtn">
+        <button class="side-item"
+                id="trendBtn">
 
             <i class="fa-solid fa-fire"></i>
 
             <span>Trendler</span>
 
-        </li>
+        </button>
 
 
-        <li id="statsBtn">
+        <button class="side-item"
+                id="statsBtn">
 
             <i class="fa-solid fa-chart-simple"></i>
 
             <span>İstatistikler</span>
 
-        </li>
+        </button>
 
 
-        <li id="recentBtn">
+        <button class="side-item"
+                id="recentBtn">
 
             <i class="fa-solid fa-clock-rotate-left"></i>
 
             <span>Son Dinlenenler</span>
 
-        </li>
+        </button>
 
 
-        <li id="topBtn">
+        <button class="side-item"
+                id="topBtn">
 
             <i class="fa-solid fa-trophy"></i>
 
             <span>İlk 10</span>
 
-        </li>
+        </button>
+
+    </nav>
 
 
-        <li id="settingsBtn">
+    <div class="side-bottom">
 
-            <i class="fa-solid fa-gear"></i>
+        <div class="side-note">
 
-            <span>Ayarlar</span>
+            <i class="fa-solid fa-headphones"></i>
 
-        </li>
-
-    </ul>
-
-
-    <div class="sidebar-bottom">
-
-        <div class="sidebar-music-note">
-            ♪
         </div>
 
+        <strong>
+            Müzik modunu aç.
+        </strong>
+
         <p>
-            Kulaklığını tak,
-            müziğin keyfini çıkar.
+            Kulaklığını tak ve ritme bırak kendini.
         </p>
 
     </div>
@@ -196,644 +182,553 @@
 
 
 <!-- =====================================================
-     MOBİL SIDEBAR OVERLAY
+     MAIN
 ===================================================== -->
 
-<div class="sidebar-overlay"
-     id="sidebarOverlay">
-</div>
+<main>
 
 
 <!-- =====================================================
-     ANA İÇERİK
+     HERO
 ===================================================== -->
 
-<main id="mainContent">
+<section class="hero"
+         id="heroSection">
 
 
-    <!-- =================================================
-         HERO / ANA EKRAN
-    ================================================== -->
+    <div class="hero-content">
 
-    <section class="hero"
-             id="heroSection">
+        <div class="hero-badge">
 
-        <!-- Hareketli dekorasyon -->
+            <span></span>
 
-        <div class="hero-glow hero-glow-1"></div>
-        <div class="hero-glow hero-glow-2"></div>
-
-        <div class="hero-particles">
-
-            <span>♪</span>
-            <span>♫</span>
-            <span>♪</span>
-            <span>♬</span>
-            <span>♫</span>
-            <span>♪</span>
+            MUSICWAVE
 
         </div>
 
 
-        <div class="hero-content">
+        <h1>
 
-            <div class="hero-badge">
+            Müziğin
+            <em>senin</em>
+            dünyan.
 
-                <span class="pulse-dot"></span>
+        </h1>
 
-                MUSICWAVE
 
-            </div>
+        <p>
 
+            En sevdiğin şarkıları keşfet,
+            dinle ve ritmi hisset.
 
-            <h1>
+        </p>
 
-                Müziğin
-                <span>ritmini</span>
-                keşfet.
 
-            </h1>
+        <div class="hero-buttons">
 
+            <button id="startListening"
+                    class="primary-btn">
 
-            <p>
+                <i class="fa-solid fa-play"></i>
 
-                Sevdiğin şarkıları keşfet,
-                dinle ve kendi müzik dünyanı oluştur.
+                Müziği Keşfet
 
-            </p>
+            </button>
 
 
-            <div class="hero-buttons">
+            <button id="heroTrend"
+                    class="secondary-btn">
 
-                <button
-                    class="hero-btn primary"
-                    id="heroExploreBtn">
+                <i class="fa-solid fa-fire"></i>
 
-                    <i class="fa-solid fa-play"></i>
-
-                    Müziği Keşfet
-
-                </button>
-
-
-                <button
-                    class="hero-btn secondary"
-                    id="heroTrendBtn">
-
-                    <i class="fa-solid fa-fire"></i>
-
-                    Trendler
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- Animasyonlu müzik dalgası -->
-
-        <div class="hero-wave">
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
-
-        <!-- Dekoratif disk -->
-
-        <div class="hero-disc">
-
-            <div class="disc-center">
-
-                <i class="fa-solid fa-music"></i>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         HIZLI BİLGİ KARTLARI
-    ================================================== -->
-
-    <section class="quick-stats"
-             id="quickStats">
-
-        <div class="quick-card">
-
-            <div class="quick-icon cyan">
-
-                <i class="fa-solid fa-music"></i>
-
-            </div>
-
-            <div>
-
-                <strong id="quickSongCount">
-                    9
-                </strong>
-
-                <span>
-                    Şarkı
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="quick-card">
-
-            <div class="quick-icon green">
-
-                <i class="fa-solid fa-headphones"></i>
-
-            </div>
-
-            <div>
-
-                <strong id="quickPlayCount">
-                    0
-                </strong>
-
-                <span>
-                    Dinleme
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="quick-card">
-
-            <div class="quick-icon purple">
-
-                <i class="fa-solid fa-heart"></i>
-
-            </div>
-
-            <div>
-
-                <strong>
-                    MusicWave
-                </strong>
-
-                <span>
-                    Senin müzik alanın
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         TREND ŞARKILAR
-    ================================================== -->
-
-    <section class="songs-section"
-             id="songsSection">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-label">
-                    ŞİMDİ ÇALANLAR
-                </span>
-
-                <h2>
-                    🔥 Trend Şarkılar
-                </h2>
-
-            </div>
-
-
-            <button
-                class="section-action"
-                id="viewAllSongs">
-
-                Tümünü Gör
-
-                <i class="fa-solid fa-arrow-right"></i>
+                Trendler
 
             </button>
 
         </div>
 
+    </div>
 
-        <div class="song-grid"
-             id="songGrid">
 
-            <!-- JavaScript dolduracak -->
+    <!-- HERO MUSIC VISUAL -->
 
-        </div>
+    <div class="hero-visual">
 
-    </section>
 
+        <div class="vinyl">
 
-    <!-- =================================================
-         İSTATİSTİKLER
-    ================================================== -->
+            <div class="vinyl-lines"></div>
 
-    <section class="stats-section"
-             id="statsSection">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-label">
-                    SENİN VERİLERİN
-                </span>
-
-                <h2>
-                    📊 Müzik İstatistiklerin
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="stats-grid">
-
-
-            <div class="stat-card">
-
-                <div class="stat-card-icon">
-
-                    <i class="fa-solid fa-play"></i>
-
-                </div>
-
-                <h3>
-                    Toplam Dinleme
-                </h3>
-
-                <strong id="totalSongs">
-                    0
-                </strong>
-
-                <p>
-                    Şarkı
-                </p>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-card-icon">
-
-                    <i class="fa-solid fa-clock"></i>
-
-                </div>
-
-                <h3>
-                    Toplam Süre
-                </h3>
-
-                <strong id="totalTime">
-                    0
-                </strong>
-
-                <p>
-                    Dakika
-                </p>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-card-icon">
-
-                    <i class="fa-solid fa-crown"></i>
-
-                </div>
-
-                <h3>
-                    En Çok Dinlenen
-                </h3>
-
-                <strong id="mostPlayed">
-                    Yok
-                </strong>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         SON DİNLENENLER
-    ================================================== -->
-
-    <section class="recent-section"
-             id="recentSection">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-label">
-                    GEÇMİŞ
-                </span>
-
-                <h2>
-                    🎧 Son Dinlenenler
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="song-grid"
-             id="recentSongs">
-
-            <!-- JavaScript dolduracak -->
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         İLK 10
-    ================================================== -->
-
-    <section class="top-section"
-             id="topSection">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-label">
-                    POPÜLER
-                </span>
-
-                <h2>
-                    🏆 İlk 10
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="playlist-list"
-             id="topSongs">
-
-            <!-- JavaScript dolduracak -->
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         ARAMA SONUÇLARI
-    ================================================== -->
-
-    <section class="search-results"
-             id="searchResults">
-
-        <div class="section-heading">
-
-            <div>
-
-                <span class="section-label">
-                    ARAMA
-                </span>
-
-                <h2>
-                    🔎 Arama Sonuçları
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="no-results"
-             id="noResults">
-
-            <div class="no-results-icon">
+            <div class="vinyl-center">
 
                 <i class="fa-solid fa-music"></i>
 
             </div>
 
-            <h3>
-                Müzik bulunamadı
-            </h3>
+        </div>
 
-            <p>
-                Başka bir şarkı veya sanatçı adı dene.
-            </p>
+
+        <div class="floating-note note1">
+            ♪
+        </div>
+
+        <div class="floating-note note2">
+            ♫
+        </div>
+
+        <div class="floating-note note3">
+            ♬
+        </div>
+
+
+        <div class="equalizer">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     QUICK STATS
+===================================================== -->
+
+<div class="quick-stats">
+
+
+    <div class="quick-card">
+
+        <div class="quick-icon cyan">
+
+            <i class="fa-solid fa-music"></i>
+
+        </div>
+
+        <div>
+
+            <strong id="songCount">
+                9
+            </strong>
+
+            <span>
+                Şarkı
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="quick-card">
+
+        <div class="quick-icon green">
+
+            <i class="fa-solid fa-headphones"></i>
+
+        </div>
+
+        <div>
+
+            <strong id="quickPlays">
+                0
+            </strong>
+
+            <span>
+                Dinleme
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="quick-card">
+
+        <div class="quick-icon purple">
+
+            <i class="fa-solid fa-heart"></i>
+
+        </div>
+
+        <div>
+
+            <strong>
+                100%
+            </strong>
+
+            <span>
+                Müzik modu
+            </span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     SONGS
+===================================================== -->
+
+<section id="songsSection">
+
+    <div class="section-top">
+
+        <div>
+
+            <small>
+                ŞİMDİ POPÜLER
+            </small>
+
+            <h2>
+                🔥 Trend Şarkılar
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="song-grid"
+         id="songGrid">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<section id="statsSection">
+
+    <div class="section-top">
+
+        <div>
+
+            <small>
+                SENİN VERİLERİN
+            </small>
+
+            <h2>
+                📊 Müzik İstatistiklerin
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-play"></i>
+
+            <span>
+                Toplam Dinleme
+            </span>
+
+            <strong id="totalSongs">
+                0
+            </strong>
+
+            <small>
+                şarkı
+            </small>
 
         </div>
 
 
-        <div class="song-grid"
-             id="searchGrid">
+        <div class="stat-card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <span>
+                Toplam Süre
+            </span>
+
+            <strong id="totalTime">
+                0
+            </strong>
+
+            <small>
+                dakika
+            </small>
 
         </div>
 
-    </section>
+
+        <div class="stat-card">
+
+            <i class="fa-solid fa-crown"></i>
+
+            <span>
+                En Çok Dinlenen
+            </span>
+
+            <strong id="mostPlayed">
+                Yok
+            </strong>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RECENT
+===================================================== -->
+
+<section id="recentSection">
+
+    <div class="section-top">
+
+        <div>
+
+            <small>
+                GEÇMİŞ
+            </small>
+
+            <h2>
+                🎧 Son Dinlenenler
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="song-grid"
+         id="recentSongs">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TOP 10
+===================================================== -->
+
+<section id="topSection">
+
+    <div class="section-top">
+
+        <div>
+
+            <small>
+                EN POPÜLER
+            </small>
+
+            <h2>
+                🏆 İlk 10
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="playlist"
+         id="topSongs">
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<section id="searchResults">
+
+    <div class="section-top">
+
+        <div>
+
+            <small>
+                ARAMA SONUÇLARI
+            </small>
+
+            <h2>
+                🔎 Sonuçlar
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div id="noResults"
+         class="no-results">
+
+        <i class="fa-solid fa-music"></i>
+
+        <h3>
+            Şarkı bulunamadı
+        </h3>
+
+        <p>
+            Başka bir şarkı veya sanatçı dene.
+        </p>
+
+    </div>
+
+
+    <div class="song-grid"
+         id="searchGrid">
+
+    </div>
+
+</section>
+
 
 </main>
 
 
 <!-- =====================================================
-     MUSIC PLAYER
+     PLAYER
 ===================================================== -->
 
 <footer class="player"
-       id="player">
+        id="player">
 
 
-    <!-- PLAYER KAPAT -->
-
-    <button
-        class="player-toggle close"
-        id="closePlayer"
-        type="button"
-        aria-label="Playerı küçült">
+    <button class="player-close"
+            id="closePlayer">
 
         <i class="fa-solid fa-chevron-down"></i>
 
     </button>
 
 
-    <!-- PLAYER AÇ -->
-
-    <button
-        class="player-toggle open"
-        id="openPlayer"
-        type="button"
-        aria-label="Playerı aç">
+    <button class="player-open"
+            id="openPlayer">
 
         <i class="fa-solid fa-chevron-up"></i>
 
     </button>
 
 
-    <!-- SOL -->
+    <!-- LEFT -->
 
-    <div class="player-left">
+    <div class="now-playing">
 
-        <div class="player-image-wrapper">
+        <div class="player-image">
 
-            <img
-                id="playerImage"
-                src="images/default.jpg"
-                alt="Çalan şarkı">
-
-            <div class="player-image-glow"></div>
+            <img id="playerImage"
+                 src="images/default.jpg"
+                 alt="">
 
         </div>
 
 
-        <div class="player-song-info">
+        <div class="now-info">
 
-            <h3 id="musicName">
+            <strong id="musicName">
                 Şarkı Seçilmedi
-            </h3>
+            </strong>
 
-            <p id="artistName">
+            <span id="artistName">
                 Sanatçı
-            </p>
-
-            <div class="playing-status"
-                 id="playingStatus">
-
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-
-                <small>
-                    Hazır
-                </small>
-
-            </div>
+            </span>
 
         </div>
 
     </div>
 
 
-    <!-- ORTA -->
+    <!-- CENTER -->
 
-    <div class="player-center">
+    <div class="player-controls">
 
 
-        <button
-            id="shuffle"
-            class="player-control"
-            type="button"
-            title="Karıştır">
+        <button id="shuffle"
+                title="Karıştır">
 
             <i class="fa-solid fa-shuffle"></i>
 
         </button>
 
 
-        <button
-            id="prev"
-            class="player-control"
-            type="button"
-            title="Önceki">
+        <button id="prev"
+                title="Önceki">
 
             <i class="fa-solid fa-backward-step"></i>
 
         </button>
 
 
-        <button
-            id="play"
-            class="main-play"
-            type="button"
-            title="Oynat">
+        <button id="play"
+                class="play-main"
+                title="Oynat">
 
             <i class="fa-solid fa-play"></i>
 
         </button>
 
 
-        <button
-            id="pause"
-            class="main-pause"
-            type="button"
-            title="Duraklat">
+        <button id="pause"
+                class="play-main pause-button"
+                title="Duraklat">
 
             <i class="fa-solid fa-pause"></i>
 
         </button>
 
 
-        <button
-            id="next"
-            class="player-control"
-            type="button"
-            title="Sonraki">
+        <button id="next"
+                title="Sonraki">
 
             <i class="fa-solid fa-forward-step"></i>
 
         </button>
 
 
-        <button
-            id="repeat"
-            class="player-control"
-            type="button"
-            title="Tekrarla">
+        <button id="repeat"
+                title="Tekrarla">
 
             <i class="fa-solid fa-repeat"></i>
 
         </button>
 
+
     </div>
 
 
-    <!-- SAĞ -->
+    <!-- RIGHT -->
 
     <div class="player-right">
 
 
-        <div class="time-row">
+        <div class="time">
 
             <span id="currentTime">
                 0:00
@@ -850,30 +745,23 @@
         </div>
 
 
-        <input
-            type="range"
-            id="progress"
-            min="0"
-            max="100"
-            value="0"
-            step="0.1"
-            aria-label="Şarkı ilerlemesi"
-        >
+        <input id="progress"
+               type="range"
+               min="0"
+               max="100"
+               value="0">
 
 
-        <div class="volume-control">
+        <div class="volume">
 
             <i class="fa-solid fa-volume-high"></i>
 
-            <input
-                type="range"
-                id="volume"
-                min="0"
-                max="1"
-                step="0.01"
-                value="1"
-                aria-label="Ses seviyesi"
-            >
+            <input id="volume"
+                   type="range"
+                   min="0"
+                   max="1"
+                   step="0.01"
+                   value="1">
 
         </div>
 
@@ -889,36 +777,31 @@
 <div class="mini-player"
      id="miniPlayer">
 
-    <img
-        id="miniPlayerImage"
-        src="images/default.jpg"
-        alt="Şarkı">
+    <img id="miniImage"
+         src="images/default.jpg"
+         alt="">
 
-    <div class="mini-player-info">
+    <div>
 
-        <strong id="miniPlayerName">
-            Şarkı Seçilmedi
+        <strong id="miniName">
+            Şarkı
         </strong>
 
-        <span id="miniPlayerArtist">
+        <span id="miniArtist">
             Sanatçı
         </span>
 
     </div>
 
 
-    <button
-        id="miniPlay"
-        type="button">
+    <button id="miniPlay">
 
         <i class="fa-solid fa-play"></i>
 
     </button>
 
 
-    <button
-        id="miniOpen"
-        type="button">
+    <button id="miniOpen">
 
         <i class="fa-solid fa-chevron-up"></i>
 
@@ -928,23 +811,23 @@
 
 
 <!-- =====================================================
-     AYARLAR PANELİ
+     SETTINGS
 ===================================================== -->
 
 <div class="settings-overlay"
      id="settingsOverlay">
 
-    <div class="settings-panel"
-         id="settingsPanel">
+
+    <div class="settings-panel">
 
 
         <div class="settings-header">
 
             <div>
 
-                <span class="section-label">
+                <small>
                     MUSICWAVE
-                </span>
+                </small>
 
                 <h2>
                     ⚙ Ayarlar
@@ -953,9 +836,7 @@
             </div>
 
 
-            <button
-                id="closeSettings"
-                type="button">
+            <button id="closeSettings">
 
                 <i class="fa-solid fa-xmark"></i>
 
@@ -964,80 +845,58 @@
         </div>
 
 
-        <!-- TEMA -->
-
-        <div class="settings-group">
+        <div class="setting-group">
 
             <h3>
                 Görünüm
             </h3>
 
 
-            <div class="setting-item">
+            <div class="setting">
 
-                <div class="setting-info">
+                <div>
 
-                    <div class="setting-icon">
-                        🌙
-                    </div>
+                    <strong>
+                        🌙 Dark Mode
+                    </strong>
 
-                    <div>
-
-                        <strong>
-                            Dark Mode
-                        </strong>
-
-                        <span>
-                            Koyu neon görünüm
-                        </span>
-
-                    </div>
+                    <span>
+                        Neon karanlık görünüm
+                    </span>
 
                 </div>
 
 
                 <label class="switch">
 
-                    <input
-                        type="checkbox"
-                        id="darkMode"
-                        checked
-                    >
+                    <input id="darkMode"
+                           type="checkbox"
+                           checked>
 
-                    <span class="slider"></span>
+                    <span></span>
 
                 </label>
 
             </div>
 
 
-            <div class="setting-item">
+            <div class="setting">
 
-                <div class="setting-info">
+                <div>
 
-                    <div class="setting-icon">
-                        ☀️
-                    </div>
+                    <strong>
+                        ☀️ Light Mode
+                    </strong>
 
-                    <div>
-
-                        <strong>
-                            Light Mode
-                        </strong>
-
-                        <span>
-                            Açık görünüm
-                        </span>
-
-                    </div>
+                    <span>
+                        Açık görünüm
+                    </span>
 
                 </div>
 
 
-                <button
-                    class="setting-button"
-                    id="lightMode"
-                    type="button">
+                <button id="lightMode"
+                        class="small-btn">
 
                     Aç
 
@@ -1048,47 +907,35 @@
         </div>
 
 
-        <!-- PLAYER -->
-
-        <div class="settings-group">
+        <div class="setting-group">
 
             <h3>
                 Player
             </h3>
 
 
-            <div class="setting-item">
+            <div class="setting">
 
-                <div class="setting-info">
+                <div>
 
-                    <div class="setting-icon">
-                        🎵
-                    </div>
+                    <strong>
+                        🎵 Mini Player
+                    </strong>
 
-                    <div>
-
-                        <strong>
-                            Mini Player
-                        </strong>
-
-                        <span>
-                            Player kapatıldığında altta göster
-                        </span>
-
-                    </div>
+                    <span>
+                        Player kapatılınca küçük player göster
+                    </span>
 
                 </div>
 
 
                 <label class="switch">
 
-                    <input
-                        type="checkbox"
-                        id="miniPlayerToggle"
-                        checked
-                    >
+                    <input id="miniToggle"
+                           type="checkbox"
+                           checked>
 
-                    <span class="slider"></span>
+                    <span></span>
 
                 </label>
 
@@ -1097,17 +944,112 @@
         </div>
 
 
-        <!-- ANİMASYON -->
-
-        <div class="settings-group">
+        <div class="keyboard">
 
             <h3>
-                Animasyonlar
+                ⌨ Klavye
             </h3>
 
+            <p>
+                <kbd>Space</kbd>
+                Oynat / Duraklat
+            </p>
 
-            <div class="setting-item">
+            <p>
+                <kbd>←</kbd>
+                Önceki şarkı
+            </p>
 
-                <div class="setting-info">
+            <p>
+                <kbd>→</kbd>
+                Sonraki şarkı
+            </p>
 
-                    <div class="setting-
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MOBILE NAV
+===================================================== -->
+
+<nav class="mobile-nav">
+
+
+    <button id="mobileHome">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>
+            Ana Sayfa
+        </span>
+
+    </button>
+
+
+    <button id="mobileSearch">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <span>
+            Ara
+        </span>
+
+    </button>
+
+
+    <button id="mobileMusic">
+
+        <i class="fa-solid fa-music"></i>
+
+        <span>
+            Müzik
+        </span>
+
+    </button>
+
+
+    <button id="mobileSettings">
+
+        <i class="fa-solid fa-gear"></i>
+
+        <span>
+            Ayarlar
+        </span>
+
+    </button>
+
+</nav>
+
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
+
+<audio id="audioPlayer"></audio>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div class="toast"
+     id="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastText">
+        Hazır
+    </span>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
