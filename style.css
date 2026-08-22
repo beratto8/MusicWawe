@@ -6536,3 +6536,1306 @@ input:focus{
 /* =====================================================
    END MUSICWAVE FULL CSS V2
 ===================================================== */
+
+/* =====================================================
+   MUSICWAVE EXTRA ANIMATION PACK
+===================================================== */
+
+
+/* =====================================================
+   HERO YENİ TASARIM
+===================================================== */
+
+.hero {
+    min-height: 430px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        linear-gradient(
+            135deg,
+            #031b20,
+            #003b42 40%,
+            #001d17 75%,
+            #020505
+        );
+}
+
+
+/* HERO GRID */
+
+.hero-grid {
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(0,255,255,.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0,255,255,.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black,
+            transparent
+        );
+
+    animation: gridMove 15s linear infinite;
+
+    opacity: .45;
+
+    z-index: -1;
+}
+
+
+@keyframes gridMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(45px);
+    }
+
+}
+
+
+/* HERO ORBS */
+
+.hero-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(5px);
+
+    pointer-events: none;
+
+}
+
+
+.orb-one {
+
+    width: 280px;
+    height: 280px;
+
+    background: #00eaff55;
+
+    right: 5%;
+    top: -100px;
+
+    box-shadow:
+        0 0 100px #00eaff;
+
+    animation:
+        orbFloatOne 8s ease-in-out infinite alternate;
+
+}
+
+
+.orb-two {
+
+    width: 220px;
+    height: 220px;
+
+    background: #00ff8855;
+
+    left: 35%;
+    bottom: -120px;
+
+    box-shadow:
+        0 0 100px #00ff88;
+
+    animation:
+        orbFloatTwo 10s ease-in-out infinite alternate;
+
+}
+
+
+.orb-three {
+
+    width: 130px;
+    height: 130px;
+
+    background: #8a2be255;
+
+    right: 35%;
+    top: 30%;
+
+    box-shadow:
+        0 0 80px #8a2be2;
+
+    animation:
+        orbFloatThree 6s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes orbFloatOne {
+
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(-80px, 80px) scale(1.2);
+    }
+
+}
+
+
+@keyframes orbFloatTwo {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, -70px);
+    }
+
+}
+
+
+@keyframes orbFloatThree {
+
+    from {
+        transform: translateY(0) scale(.8);
+    }
+
+    to {
+        transform: translateY(-60px) scale(1.2);
+    }
+
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 750px;
+
+}
+
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    color: #00ffff;
+
+    background:
+        rgba(0,255,255,.08);
+
+    border:
+        1px solid #00ffff44;
+
+    box-shadow:
+        0 0 25px #00ffff22;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+    animation:
+        badgePulse 3s infinite;
+
+}
+
+
+@keyframes badgePulse {
+
+    0%,100% {
+        box-shadow:
+            0 0 15px #00ffff22;
+    }
+
+    50% {
+        box-shadow:
+            0 0 35px #00ffff66;
+    }
+
+}
+
+
+.hero h1 {
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 1.05;
+
+    margin: 0;
+
+    letter-spacing: -2px;
+
+}
+
+
+.hero h1 span {
+
+    color: #00ffff;
+
+    text-shadow:
+        0 0 15px #00ffff,
+        0 0 45px #00ffff;
+
+}
+
+
+.hero p {
+
+    max-width: 620px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-top: 22px;
+
+    color: #c5dada;
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.hero-main-btn,
+.hero-second-btn {
+
+    border: none;
+
+    padding: 15px 24px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+.hero-main-btn {
+
+    color: #001010;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00eaff,
+            #00ff88
+        );
+
+    box-shadow:
+        0 0 25px #00eaff55;
+
+}
+
+
+.hero-second-btn {
+
+    color: white;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid #ffffff22;
+
+}
+
+
+.hero-main-btn:hover,
+.hero-second-btn:hover {
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+.hero-main-btn:hover {
+
+    box-shadow:
+        0 0 40px #00ffff99;
+
+}
+
+
+.hero-second-btn:hover {
+
+    background:
+        rgba(255,255,255,.14);
+
+}
+
+
+/* =====================================================
+   MUSIC WAVE
+===================================================== */
+
+.music-waves {
+
+    position: absolute;
+
+    right: 50px;
+    bottom: 25px;
+
+    height: 180px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 7px;
+
+    opacity: .65;
+
+}
+
+
+.music-waves span {
+
+    width: 5px;
+
+    height: 40px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            to top,
+            #00ff88,
+            #00eaff
+        );
+
+    box-shadow:
+        0 0 15px #00ffff;
+
+    animation:
+        waveDance 1s ease-in-out infinite alternate;
+
+}
+
+
+.music-waves span:nth-child(1) {
+    height: 30px;
+    animation-delay: .1s;
+}
+
+.music-waves span:nth-child(2) {
+    height: 80px;
+    animation-delay: .2s;
+}
+
+.music-waves span:nth-child(3) {
+    height: 130px;
+    animation-delay: .3s;
+}
+
+.music-waves span:nth-child(4) {
+    height: 70px;
+    animation-delay: .4s;
+}
+
+.music-waves span:nth-child(5) {
+    height: 160px;
+    animation-delay: .5s;
+}
+
+.music-waves span:nth-child(6) {
+    height: 100px;
+    animation-delay: .6s;
+}
+
+.music-waves span:nth-child(7) {
+    height: 150px;
+    animation-delay: .7s;
+}
+
+.music-waves span:nth-child(8) {
+    height: 65px;
+    animation-delay: .8s;
+}
+
+.music-waves span:nth-child(9) {
+    height: 120px;
+    animation-delay: .9s;
+}
+
+.music-waves span:nth-child(10) {
+    height: 170px;
+    animation-delay: 1s;
+}
+
+.music-waves span:nth-child(11) {
+    height: 80px;
+    animation-delay: .7s;
+}
+
+.music-waves span:nth-child(12) {
+    height: 140px;
+    animation-delay: .5s;
+}
+
+.music-waves span:nth-child(13) {
+    height: 50px;
+    animation-delay: .3s;
+}
+
+.music-waves span:nth-child(14) {
+    height: 110px;
+    animation-delay: .6s;
+}
+
+.music-waves span:nth-child(15) {
+    height: 150px;
+    animation-delay: .4s;
+}
+
+.music-waves span:nth-child(16) {
+    height: 70px;
+    animation-delay: .8s;
+}
+
+.music-waves span:nth-child(17) {
+    height: 130px;
+    animation-delay: .2s;
+}
+
+.music-waves span:nth-child(18) {
+    height: 90px;
+    animation-delay: .9s;
+}
+
+.music-waves span:nth-child(19) {
+    height: 160px;
+    animation-delay: .3s;
+}
+
+.music-waves span:nth-child(20) {
+    height: 60px;
+    animation-delay: .7s;
+}
+
+
+@keyframes waveDance {
+
+    from {
+        transform:
+            scaleY(.45);
+    }
+
+    to {
+        transform:
+            scaleY(1.15);
+    }
+
+}
+
+
+/* =====================================================
+   PLAYER YENİ TASARIM
+===================================================== */
+
+.player {
+
+    height: 125px !important;
+
+    padding:
+        15px 35px !important;
+
+    display: none;
+
+    gap: 30px;
+
+    background:
+        rgba(3,8,10,.92) !important;
+
+    border-top:
+        1px solid #00ffff33 !important;
+
+    box-shadow:
+        0 -10px 50px #00ffff18;
+
+}
+
+
+.player-left {
+
+    min-width: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.player-cover-wrap {
+
+    position: relative;
+
+    width: 75px;
+    height: 75px;
+
+    flex-shrink: 0;
+
+}
+
+
+.player-cover-wrap img {
+
+    width: 75px;
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.playing-ring {
+
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: 22px;
+
+    border:
+        2px solid #00ffff;
+
+    opacity: 0;
+
+    animation:
+        playerRing 2s linear infinite;
+
+}
+
+
+.player.playing .playing-ring {
+
+    opacity: 1;
+
+}
+
+
+@keyframes playerRing {
+
+    from {
+        transform: rotate(0deg);
+        box-shadow:
+            0 0 10px #00ffff;
+    }
+
+    to {
+        transform: rotate(360deg);
+        box-shadow:
+            0 0 30px #00ff88;
+    }
+
+}
+
+
+.player-song-info h3 {
+
+    font-size: 17px;
+
+    margin: 0;
+
+}
+
+
+.player-song-info p {
+
+    margin-top: 4px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+}
+
+
+#playingStatus {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: #00ff88;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =====================================================
+   PLAYER CENTER
+===================================================== */
+
+.player-center {
+
+    flex: 1;
+
+    max-width: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+.player-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.player-buttons button,
+.player-right button {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.06);
+
+    color: #bbb;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.player-buttons button:hover,
+.player-right button:hover {
+
+    color: #00ffff;
+
+    background:
+        rgba(0,255,255,.12);
+
+    box-shadow:
+        0 0 20px #00ffff44;
+
+    transform:
+        scale(1.1);
+
+}
+
+
+.player-buttons .main-play,
+.player-buttons .main-pause {
+
+    width: 48px;
+
+    height: 48px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00eaff,
+            #00ff88
+        );
+
+    color: #001010;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 0 25px #00ffff55;
+
+}
+
+
+.player-buttons .main-pause {
+
+    display: none;
+
+}
+
+
+/* =====================================================
+   EQUALIZER
+===================================================== */
+
+.equalizer {
+
+    position: absolute;
+
+    margin-top: -5px;
+
+    display: flex;
+
+    gap: 3px;
+
+    opacity: .45;
+
+}
+
+
+.equalizer span {
+
+    width: 3px;
+
+    height: 8px;
+
+    background: #00ffff;
+
+    border-radius: 5px;
+
+}
+
+
+.player.playing .equalizer span {
+
+    animation:
+        equalizer .7s ease-in-out infinite alternate;
+
+}
+
+
+.equalizer span:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.equalizer span:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.equalizer span:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.equalizer span:nth-child(5) {
+    animation-delay: .4s;
+}
+
+
+@keyframes equalizer {
+
+    from {
+        height: 5px;
+    }
+
+    to {
+        height: 22px;
+    }
+
+}
+
+
+/* =====================================================
+   PLAYER PROGRESS
+===================================================== */
+
+.player-progress {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 8px;
+
+}
+
+
+.player-progress span {
+
+    color: #888;
+
+    font-size: 11px;
+
+    min-width: 32px;
+
+}
+
+
+.player-progress span:last-child {
+
+    text-align: right;
+
+}
+
+
+#progress {
+
+    flex: 1;
+
+}
+
+
+/* =====================================================
+   RANGE INPUT
+===================================================== */
+
+input[type="range"] {
+
+    appearance: none;
+
+    height: 4px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00eaff,
+            #00ff88
+        );
+
+    cursor: pointer;
+
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+
+    appearance: none;
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 10px #00ffff;
+
+}
+
+
+/* =====================================================
+   PLAYER RIGHT
+===================================================== */
+
+.player-right {
+
+    min-width: 190px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+}
+
+
+#volume {
+
+    width: 90px;
+
+}
+
+
+#favoriteBtn.active {
+
+    color: #ff3977;
+
+    background:
+        #ff397722;
+
+    box-shadow:
+        0 0 20px #ff397755;
+
+}
+
+
+#shuffle.active,
+#repeat.active {
+
+    color: #00ff88;
+
+    background:
+        #00ff8822;
+
+}
+
+
+/* =====================================================
+   PLAYER OPEN / CLOSE
+===================================================== */
+
+.player-toggle {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 145px;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00eaff,
+            #00ff88
+        );
+
+    color: #001010;
+
+    font-size: 18px;
+
+    z-index: 10000;
+
+    box-shadow:
+        0 0 25px #00ffff66;
+
+    transition: .3s;
+
+}
+
+
+.player-toggle:hover {
+
+    transform:
+        scale(1.1);
+
+    box-shadow:
+        0 0 40px #00ffffaa;
+
+}
+
+
+.open-btn {
+
+    display: none;
+
+}
+
+
+.player.closed + .open-btn {
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   PLAYING CARD
+===================================================== */
+
+.song-card.playing {
+
+    border:
+        1px solid #00ffff;
+
+    box-shadow:
+        0 0 30px #00ffff55,
+        inset 0 0 25px #00ffff11;
+
+}
+
+
+.song-card.playing::after {
+
+    content:
+        "● ŞU AN ÇALIYOR";
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background:
+        #00ff88;
+
+    color: #001010;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 0 20px #00ff88;
+
+}
+
+
+/* =====================================================
+   LIGHT MODE
+===================================================== */
+
+body.light .player {
+
+    background:
+        rgba(255,255,255,.92) !important;
+
+    border-top:
+        1px solid #00000015 !important;
+
+    box-shadow:
+        0 -10px 40px #00000015;
+
+}
+
+
+body.light .player-buttons button,
+body.light .player-right button {
+
+    color: #333;
+
+    background:
+        rgba(0,0,0,.06);
+
+}
+
+
+body.light .player-song-info p {
+
+    color: #666;
+
+}
+
+
+/* =====================================================
+   MOBILE PLAYER
+===================================================== */
+
+@media(max-width:900px) {
+
+    .player {
+
+        height: auto !important;
+
+        min-height: 115px;
+
+        padding: 12px 15px !important;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+    }
+
+
+    .player-left {
+
+        min-width: 0;
+
+        flex: 1;
+
+    }
+
+
+    .player-cover-wrap,
+    .player-cover-wrap img {
+
+        width: 55px;
+        height: 55px;
+
+    }
+
+
+    .player-song-info h3 {
+
+        font-size: 14px;
+
+    }
+
+
+    .player-right {
+
+        min-width: auto;
+
+    }
+
+
+    #volume {
+
+        display: none;
+
+    }
+
+
+    .player-center {
+
+        order: 3;
+
+        width: 100%;
+
+        max-width: none;
+
+    }
+
+
+    .player-buttons {
+
+        gap: 8px;
+
+    }
+
+
+    .music-waves {
+
+        right: 20px;
+
+        opacity: .25;
+
+        transform:
+            scale(.7);
+
+        transform-origin:
+            bottom right;
+
+    }
+
+
+    .hero {
+
+        min-height: 500px;
+
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .hero {
+
+        padding: 30px !important;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .hero-main-btn,
+    .hero-second-btn {
+
+        width: 100%;
+
+    }
+
+
+    .player-toggle {
+
+        right: 15px;
+
+        bottom: 130px;
+
+    }
+
+
+    .player-right {
+
+        display: none;
+
+    }
+
+   }
